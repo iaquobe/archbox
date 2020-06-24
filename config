@@ -1,7 +1,0 @@
-shortcut-add dl=https://duckduckgo.com/?q=$0
-
-nmap + zi
-nmap - zo
-
-nmap H <C-O>
-nmap L <C-I>
