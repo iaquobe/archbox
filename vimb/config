@@ -1,0 +1,15 @@
+nmap + zi
+nmap - zo
+
+nmap H <C-O>
+nmap L <C-I>
+
+# toggle simplyread
+nnoremap <C-R> :e! simplyread();<CR>
+
+# set default search engine
+shortcut-add dl=https://duckduckgo.com/?q=$0
+
+# disable java script
+# set scripts=0
+set plugins=1
