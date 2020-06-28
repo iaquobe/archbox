@@ -10,11 +10,17 @@ alt + {Down, Up}
 	xbacklight {-dec,-inc} 10
 
 alt + {Left, Right}
-	amixer set Master playback 10{-,+}
+	amixer set Master playback 10%{-,+}
 
 # program launcher
 super + @space
 	dmenu_run -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
+
+super + v
+	search -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
+
+super + n
+	sites -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
 
 # make sxhkd reload its configuration files:
 super + Escape
