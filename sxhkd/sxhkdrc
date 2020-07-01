@@ -16,9 +16,7 @@ alt + {Left, Right}
 super + @space
 	dmenu_run -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
 
-super + v
-	search -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
-
+#search with vimb
 super + n
 	sites -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
 
