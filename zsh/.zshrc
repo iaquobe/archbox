@@ -3,7 +3,14 @@
 # prompt
 PS1='%B[%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue} %~%f]%# %b'
 
-bindkey -v
+#syntax highlighting plugin
+# source "/home/iaquobe/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# ZSH_HIGHLIGHT_STYLES[path]=none
+
+
+#vim bindings with normal backspace behaviour
+bindkey -v '^?' backward-delete-char
+
 
 # remove + and - bindings
 bindkey -M vicmd -r "+"
@@ -11,16 +18,15 @@ bindkey -M vicmd -r "\x2d"
 
 # loading functions 
 autoload -Uz compinit
-
 compinit
 
 # aliases
 
 alias muted='muted() { $@ &>/dev/null &; disown &>/dev/null }; muted'
 
+alias ls='ls --color=auto'
 alias vim=nvim
 alias zathura='muted zathura'
-alias ..='cd ..'
 alias suspend='systemctl suspend'
 
 compdef _precommand muted
