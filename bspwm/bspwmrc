@@ -1,6 +1,6 @@
 #! /bin/sh
 sxhkd &
-polybar example &
+~/.config/polybar/launch_polybar.sh &
 feh pictures/coffee.png --bg-center &
 picom -r 3 -o 1 -l 5 -t 5 -D 6\
 	--shadow-red 0.11 --shadow-green 0.12 --shadow-blue 0.13 \
