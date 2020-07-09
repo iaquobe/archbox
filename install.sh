@@ -12,5 +12,6 @@ ln -s "$(pwd)/nvim" $XDG_CONFIG_HOME
 ln -s "$(pwd)/zathura" $XDG_CONFIG_HOME
 ln -s "$(pwd)/sxhkd" $XDG_CONFIG_HOME
 ln -s "$(pwd)/bspwm" $XDG_CONFIG_HOME
+ln -s "$(pwd)/dunst" $XDG_CONFIG_HOME
 
 

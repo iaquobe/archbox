@@ -1,5 +1,6 @@
 #! /bin/sh
 sxhkd &
+dunst &
 ~/.config/polybar/launch_polybar.sh &
 feh ~/pictures/wallpaper/* --bg-center &
 picom -r 3 -o 1 -l 5 -t 5 -D 6\
