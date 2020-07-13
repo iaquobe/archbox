@@ -4,9 +4,9 @@ call plug#begin()
 
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'davidhalter/jedi-vim'
 Plug 'vim-vdebug/vdebug'
 Plug 'xavierd/clang_complete'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -32,9 +32,12 @@ autocmd BufWritePost init.vim source $MYVIMRC
 
 " python autocomplete
 " dont show completion menu automatically when typing .
-let g:jedi#popup_on_dot = 0
+" let g:jedi#popup_on_dot = 0
 " dont show function signature popup
-let g:jedi#show_call_signatures=0
+" let g:jedi#show_call_signatures=0
+
+"coc autocomplete
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " keyboard mapping
 map <C-j> <C-W>j
