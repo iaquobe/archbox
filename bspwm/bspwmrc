@@ -1,14 +1,18 @@
 #! /bin/sh
+
 sxhkd &
 dunst &
 ~/.config/polybar/launch_polybar.sh &
-feh ~/pictures/wallpaper/* --bg-center &
+feh ~/pictures/wallpaper --bg-center -z &
 picom -r 3 -o 1 -l 5 -t 5 -D 6\
 	--shadow-red 0.11 --shadow-green 0.12 --shadow-blue 0.13 \
 	--vsync --backend glx \
 	--no-use-damage --experimental-backends &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+	bspc monitor $m -d I II III IV V VI VII VIII IX X
+done
 
 bspc config border_width         3
 bspc config top_padding 35
