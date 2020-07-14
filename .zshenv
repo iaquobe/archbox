@@ -7,4 +7,5 @@ PATH=$PATH":/home/iaquobe/bin"
 PATH=$PATH":/home/iaquobe/.local/bin"
 PATH=$PATH":/home/iaquobe/scripts"
 PATH=$PATH":."
+
 export PATH

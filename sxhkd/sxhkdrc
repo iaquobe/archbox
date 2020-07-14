@@ -65,7 +65,7 @@ super + ctrl + {m,x,y,z}
 #
 
 # focus the node in the given direction
-super + {_, shift +, ctrl +}{h,j,k,l}
+super + {_, shift +, ctrl + shift + }{h,j,k,l}
 	mode={f,s,n}; \
 	direction={west,south,north,east}; \
 	if [ $mode = "f" ]; then \

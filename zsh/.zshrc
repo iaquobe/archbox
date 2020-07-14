@@ -25,7 +25,13 @@ alias muted='muted() { $@ &>/dev/null &; disown &>/dev/null }; muted'
 
 alias ls='ls --color=auto'
 alias vim=nvim
+alias v=nvim
+
+#programs that should not block the terminal
 alias zathura='muted zathura'
+alias firefox='muted firefox'
+alias vimb='muted vimb'
+
 alias suspend='systemctl suspend'
 
 compdef _precommand muted

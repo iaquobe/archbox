@@ -23,6 +23,9 @@ set cursorline
 set shiftwidth=3
 set tabstop=3
 set clipboard=unnamed 
+set updatetime=300
+set list
+set listchars=tab:>-
 
 
 " function
