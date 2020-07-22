@@ -24,6 +24,7 @@ compinit
 alias muted='muted() { $@ &>/dev/null &; disown &>/dev/null }; muted'
 
 alias ls='ls --color=auto'
+alias lsl='ls -lh'
 alias vim=nvim
 alias v=nvim
 
