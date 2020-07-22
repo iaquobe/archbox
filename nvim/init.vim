@@ -13,10 +13,10 @@ call plug#end()
 
 
 " look
-set noshowmode
-set encoding=UTF-8
 colorscheme gruvbox
 syntax on
+set noshowmode
+set encoding=UTF-8
 set nowrap
 set number
 set cursorline
@@ -31,6 +31,7 @@ set listchars=tab:>-
 " function
 " autocmd VimEnter * NERDTree
 autocmd BufWritePost init.vim source $MYVIMRC
+autocmd BufWritePost *.md !pandoc % -o %.pdf
 
 
 " python autocomplete

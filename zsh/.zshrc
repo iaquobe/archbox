@@ -31,6 +31,7 @@ alias v=nvim
 alias zathura='muted zathura'
 alias firefox='muted firefox'
 alias vimb='muted vimb'
+alias mpv='muted mpv'
 
 alias suspend='systemctl suspend'
 
