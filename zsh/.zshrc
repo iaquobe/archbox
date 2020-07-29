@@ -24,6 +24,7 @@ compinit
 alias muted='muted() { $@ &>/dev/null &; disown }; muted'
 
 alias ls='ls --color=auto'
+alias lsl='ls -lh'
 alias vim=nvim
 alias v=nvim
 alias tv='muted st nvim'
@@ -32,6 +33,7 @@ alias tv='muted st nvim'
 alias zathura='muted zathura'
 alias firefox='muted firefox'
 alias vimb='muted vimb'
+alias mpv='muted mpv'
 
 alias suspend='systemctl suspend'
 
