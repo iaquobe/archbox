@@ -9,5 +9,6 @@ set inputbar-bg "#282828"
 set statusbar-bg "#282828"
 
 set statusbar-fg  "#ebdbb2"
+set completion-fg  "#ebdbb2"
 
 
