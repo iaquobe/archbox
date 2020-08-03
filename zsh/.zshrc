@@ -27,6 +27,7 @@ alias ls='ls --color=auto'
 alias lsl='ls -lh'
 alias vim=nvim
 alias v=nvim
+alias vps='ssh iaquobe@5.189.146.192'
 
 #programs that should not block the terminal
 alias zathura='muted zathura'
@@ -34,6 +35,7 @@ alias firefox='muted firefox'
 alias vimb='muted vimb'
 alias mpv='muted mpv'
 
+alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
 alias suspend='systemctl suspend'
 
 compdef _precommand muted
