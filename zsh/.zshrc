@@ -24,10 +24,15 @@ compinit
 alias muted='muted() { $@ &>/dev/null &; disown }; muted'
 
 alias ls='ls --color=auto'
+alias lsl='ls -lh --color=auto'
+
 alias vim=nvim
 alias v=nvim
-alias vps='ssh iaquobe@5.189.146.192'
 alias tv='muted st nvim'
+
+alias vps='ssh iaquobe@5.189.146.192'
+
+alias gl='git log --all --graph --decorate'
 
 #programs that should not block the terminal
 alias zathura='muted zathura'
