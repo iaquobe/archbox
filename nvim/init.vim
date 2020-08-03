@@ -4,9 +4,9 @@ call plug#begin()
 
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'vim-vdebug/vdebug'
-Plug 'xavierd/clang_complete'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'vim-vdebug/vdebug'
+" Plug 'xavierd/clang_complete'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
