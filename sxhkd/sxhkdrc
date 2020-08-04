@@ -20,6 +20,9 @@ super + @space
 super + n
 	sites -fn "Liberation Mono" -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
 
+super + u
+	firefox
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
