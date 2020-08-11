@@ -32,6 +32,7 @@ alias tv='muted st nvim'
 
 alias vps='ssh iaquobe@5.189.146.192'
 
+alias git='git --no-pager'
 alias gl='git log --all --graph --decorate'
 
 #programs that should not block the terminal
