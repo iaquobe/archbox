@@ -39,6 +39,7 @@ alias gl='git log --all --graph --decorate'
 alias zathura='muted zathura'
 alias firefox='muted firefox'
 alias vimb='muted vimb'
+alias st='muted st'
 
 alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
 alias suspend='systemctl suspend'
