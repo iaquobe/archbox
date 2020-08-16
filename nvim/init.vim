@@ -15,6 +15,7 @@ call plug#end()
 " look
 colorscheme gruvbox
 syntax on
+set relativenumber
 set noshowmode
 set encoding=UTF-8
 set nowrap
