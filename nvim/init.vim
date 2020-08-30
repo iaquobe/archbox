@@ -32,7 +32,7 @@ set listchars=tab:>-
 " function
 " autocmd VimEnter * NERDTree
 autocmd BufWritePost init.vim source $MYVIMRC
-autocmd BufWritePost *.md !pandoc % -o %.pdf
+" autocmd BufWritePost *.md !pandoc % -o %.pdf
 
 
 " python autocomplete

@@ -1,10 +1,11 @@
 #! /bin/sh
 
+
 sxhkd &
 dunst &
 ~/.config/polybar/launch_polybar.sh &
 feh ~/pictures/wallpaper --bg-center -z &
-picom -r 3 -o 1 -l 5 -t 5 -D 6\
+picom -r 3 -o 1 -l 5 -t 5 -D 6 -i 0.4 \
 	--shadow-red 0.11 --shadow-green 0.12 --shadow-blue 0.13 \
 	--vsync --backend glx \
 	--no-use-damage --experimental-backends &
