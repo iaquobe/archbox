@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+selection="$(cat $XDG_CONFIG_HOME/sites/sites | dmenu "$@")"
+option=""
+
+echo "$selection"
+[[ "$selection" =~ "^[^.]*$" ]] && option="-search"
+
+[[ "$selection" != "" ]] && firefox $option "$selection"
