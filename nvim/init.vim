@@ -7,10 +7,11 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-vdebug/vdebug'
 Plug 'xavierd/clang_complete'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 " Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
 
 " look
 colorscheme gruvbox

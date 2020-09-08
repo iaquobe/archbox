@@ -7,10 +7,10 @@ alt + Return
 	st
 
 alt + {Down, Up}
-	xbacklight {-dec,-inc} 10
+	amixer set Master playback 10%{-,+}
 
 alt + {Left, Right}
-	amixer set Master playback 10%{-,+}
+	xbacklight {-dec,-inc} 10
 
 # program launcher
 super + @space
