@@ -11,6 +11,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'vim-airline/vim-airline-themes'
 " Plug 'ryanoasis/vim-devicons'
 
+
+
 call plug#end()
 
 " look
@@ -33,8 +35,10 @@ set listchars=tab:>-
 " function
 " autocmd VimEnter * NERDTree
 autocmd BufWritePost init.vim source $MYVIMRC
-" autocmd BufWritePost *.md !pandoc % -o %.pdf
+autocmd BufWritePost *.md silent !md2pdf %
 
+" dont automatically continue comment in new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " python autocomplete
 " dont show completion menu automatically when typing .

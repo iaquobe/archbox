@@ -1,8 +1,9 @@
 
-ZDOTDIR=~/.config/zsh
-LESSHISTFILE=~/.config/less
-XDG_CONFIG_HOME=~/.config
-EDITOR=/usr/bin/nvim
+export ZDOTDIR=~/.config/zsh
+export LESSHISTFILE=~/.config/less
+export XDG_CONFIG_HOME=~/.config
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
 
 PATH=$PATH":/home/iaquobe/bin"
 PATH=$PATH":/home/iaquobe/.local/bin"
