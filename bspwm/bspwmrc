@@ -4,13 +4,8 @@
 sxhkd &
 dunst &
 ~/.config/polybar/launch_polybar.sh &
-feh ~/pictures/wallpaper --bg-center -z &
+feh ~/pictures/wallpaper/gaara.jpg --bg-center -z &
 compton --config ~/.config/compton/compton.conf &
-# -r 3 -o 1 -l 5 -t 5 -D 6 -i 0.4 \
-# --shadow-red 0.11 --shadow-green 0.12 --shadow-blue 0.13 \
-# --vsync --backend glx \
-# --no-use-damage --experimental-backends &
-
 
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 	bspc monitor $m -d I II III IV V VI VII VIII IX X
@@ -32,4 +27,5 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a firefox:Toolkit sticky=on state=floating rectangle=640x360+1250+690
 
-
+# launch kdeconnect if existing
+[[ -f "/usr/lib/kdeconnectd" ]] && /usr/lib/kdeconnectd &
