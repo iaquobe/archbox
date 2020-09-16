@@ -6,6 +6,9 @@
 alt + Return
 	st
 
+alt + @space
+	~/scripts/scratch
+
 alt + {Down, Up}
 	amixer set Master playback 10%{-,+}
 

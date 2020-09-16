@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+[ -z "$(xdotool search --class scratchpad)" ] && st -c scratchpad
+xdotool search --class scratchpad | xargs -i bspc node {} --flag hidden -f 
