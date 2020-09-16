@@ -3,8 +3,6 @@
 PS1='%B[%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue} %~%f]%# %b'
 
 #syntax highlighting plugin
-# source "/home/iaquobe/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-# ZSH_HIGHLIGHT_STYLES[path]=none
 
 
 #vim bindings with normal backspace behaviour
@@ -49,3 +47,6 @@ compdef _precommand muted
 
 
 setopt autocd
+
+source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+ZSH_HIGHLIGHT_STYLES[path]=none
