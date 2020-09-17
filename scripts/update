@@ -1,0 +1,3 @@
+#!/bin/bash
+
+notify-send "updates:" "$(yay -Sy | tail -1)"
