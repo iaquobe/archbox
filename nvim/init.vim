@@ -30,7 +30,9 @@ set clipboard=unnamed
 set updatetime=300
 set list
 set listchars=tab:>-
+set spell
 
+let mapleader=" "
 
 " function
 " autocmd VimEnter * NERDTree
@@ -54,5 +56,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-l> <C-W>l
 map <C-h> <C-W>h
+map <Leader>c mm1z=`m
 
 
