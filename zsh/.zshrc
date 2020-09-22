@@ -34,14 +34,15 @@ alias git='git --no-pager'
 alias gl='git log --all --graph --decorate'
 
 #programs that should not block the terminal
-alias zathura='muted zathura'
-alias firefox='muted firefox'
-alias vimb='muted vimb'
-alias vimiv='muted vimiv'
-alias st='muted st'
+muted_prog=(zathura firefox vimb vimiv st spotify)
+for prog in $muted_prog
+do
+	alias $prog="muted $prog"
+done
 
 alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
 alias suspend='systemctl suspend'
+alias feh="echo sure you don't want to use vimiv"
 
 compdef _precommand muted
 
