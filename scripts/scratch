@@ -1,3 +1,6 @@
 #!/usr/bin/bash
-[ -z "$(xdotool search --class scratchpad)" ] && zsh -c "st -c scratchpad &; sleep 0.1s; echo 1"
-xdotool search --class scratchpad | xargs -i zsh -c "bspc node {} -m focused; bspc node {} --flag hidden -f"
+[ -z "$(xdotool search --class scratchpad)" ] \
+	&& zsh -c "alacritty --class scratchpad,scratchpad &; sleep 0.2s; echo 1"
+
+xdotool search --class scratchpad \
+	| xargs -i zsh -c "bspc node {} -m focused; bspc node {} --flag hidden -f"
