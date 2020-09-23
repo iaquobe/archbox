@@ -28,7 +28,7 @@ bspc rule -a Screenkey manage=off
 bspc rule -a firefox:Toolkit sticky=on state=floating rectangle=640x360+1250+690
 bspc rule -a scratchpad sticky=on hidden=on state=floating follow=on rectangle=1000x150+310+5 border=off monitor=focused
 
-[ "$(ps -x | grep -c 'scratchpad')" -le "1" ] && st -c scratchpad &
+# [ "$(ps -x | grep -c 'scratchpad')" -le "1" ] && st -c scratchpad &
 
 # launch kdeconnect if existing
 # [ -f "/usr/lib/kdeconnectd" ] && /usr/lib/kdeconnectd &
