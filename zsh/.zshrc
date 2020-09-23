@@ -1,9 +1,8 @@
 # Created by newuser for 5.8
 # prompt
 PS1='%B[%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue} %~%f]%# %b'
-
-#syntax highlighting plugin
-
+EDITOR=/usr/bin/nvim
+VISUAL=/usr/bin/nvim
 
 #vim bindings with normal backspace behaviour
 bindkey -v '^?' backward-delete-char
