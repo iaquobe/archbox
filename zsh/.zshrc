@@ -33,7 +33,7 @@ alias git='git --no-pager'
 alias gl='git log --all --graph --decorate'
 
 #programs that should not block the terminal
-muted_prog=( zathura firefox vimb vimiv st spotify )
+muted_prog=( zathura firefox vimb vimiv st spotify alacritty )
 for prog in $muted_prog
 do
 	alias $prog="muted $prog"
