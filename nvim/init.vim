@@ -52,6 +52,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " keyboard mapping
+map <C-BS> bcw 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-l> <C-W>l
