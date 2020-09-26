@@ -22,7 +22,7 @@ font:
   italic:
     family: Liberation Mono
     style: Italic
-  size: 14
+  size: 11
   offset:
     x: 0
     y: 0
@@ -96,7 +96,9 @@ key_bindings:
   - { key: B,      mods: Control,       mode: Vi, action: ScrollPageUp            }
   - { key: F,      mods: Control,       mode: Vi, action: ScrollPageDown          }
   - { key: U,      mods: Control,       mode: Vi, action: ScrollHalfPageUp        }
+  - { key: U,      mods: Control,                 action: ScrollHalfPageUp        }
   - { key: D,      mods: Control,       mode: Vi, action: ScrollHalfPageDown      }
+  - { key: D,      mods: Control,                 action: ScrollHalfPageDown      }
   - { key: Y,                           mode: Vi, action: Copy                    }
   - { key: Y,                           mode: Vi, action: ClearSelection          }
   - { key: V,                           mode: Vi, action: ToggleNormalSelection   }
