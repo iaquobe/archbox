@@ -22,7 +22,13 @@ font:
   italic:
     family: Liberation Mono
     style: Italic
-  size: 14
+  size: 12
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
   use_thin_strokes: false
   debug:
     persistent_logging: false
@@ -55,8 +61,8 @@ colors:
     white:   '#ebdbb2'
 
   selection:
-    text: '0xffffff'
-    background: '0xdc3232'
+    text: '#282828'
+    background: '#d79921'
     white:   '0xffffff'
 
 cursor:
