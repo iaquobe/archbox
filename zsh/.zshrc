@@ -21,8 +21,8 @@ compinit
 alias muted='muted() { $@ &>/dev/null &; disown }; muted'
 alias fuck='sudo $(fc -ln -1)'
 
-alias ls='lsd'
-alias lsl='lsd -lh'
+alias ls='devicons-ls'
+alias lsl='devicons-ls -lh'
 
 alias vim=nvim
 alias v=nvim
