@@ -23,12 +23,6 @@ font:
     family: Liberation Mono
     style: Italic
   size: 14
-  offset:
-    x: 0
-    y: 0
-  glyph_offset:
-    x: 0
-    y: 0
   use_thin_strokes: false
   debug:
     persistent_logging: false

@@ -1,8 +1,8 @@
 # Created by newuser for 5.8
 # prompt
 PS1='%B[%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue} %~%f]%# %b'
-EDITOR=/usr/bin/nvim
-VISUAL=/usr/bin/nvim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
 
 #vim bindings with normal backspace behaviour
 bindkey -v '^?' backward-delete-char
@@ -19,9 +19,10 @@ compinit
 # aliases
 
 alias muted='muted() { $@ &>/dev/null &; disown }; muted'
+alias fuck='sudo $(fc -ln -1)'
 
-alias ls='ls --color=auto'
-alias lsl='ls -lh --color=auto'
+alias ls='lsd'
+alias lsl='lsd -lh'
 
 alias vim=nvim
 alias v=nvim

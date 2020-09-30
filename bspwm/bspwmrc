@@ -1,5 +1,6 @@
-#! /bin/sh
+#!/bin/zsh
 
+EDITOR=/usr/bin/nvim
 
 sxhkd &
 dunst &

@@ -7,9 +7,7 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-vdebug/vdebug'
 Plug 'xavierd/clang_complete'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-webdevicons'
 
 
 
@@ -31,6 +29,7 @@ set updatetime=300
 set list
 set listchars=tab:>-
 set spell
+set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 
 let mapleader=" "
 

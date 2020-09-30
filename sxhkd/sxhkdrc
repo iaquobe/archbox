@@ -15,6 +15,9 @@ alt + {Down, Up}
 alt + {Left, Right}
 	xbacklight {-dec,-inc} 10
 
+alt + i
+	zsh -c "alacritty -e ranger"
+
 # program launcher
 super + @space
 	dmenu_run -fn "Liberation Mono" -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
@@ -100,10 +103,10 @@ super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+# super + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
