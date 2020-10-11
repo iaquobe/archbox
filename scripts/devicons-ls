@@ -65,8 +65,8 @@ EXTENSIONS = {":FILE":	[u"", "14"],
               "less":		[u"", "10"],
               "lhs":		[u"", "10"],
               "lua":		[u"", "10"],
-              "markdown":	[u"", "105"],
-              "md":			[u"", "105"],
+              "markdown":	[u"", "11"],
+              "md":			[u"", "11"],
               "ml":			[u"λ", "10"],
               "mli":		[u"λ", "10"],
               "mustache":	[u"", "10"],
@@ -144,10 +144,15 @@ if __name__ == '__main__':
         action="store_true",
         default=False,
      dest="is_list")
-    parser.add_option("-d", "--dir", dest="dir", default='')
     (options, args) = parser.parse_args()
 
-    files = glob.glob(options.dir + '.*') + glob.glob(options.dir + '*')
+    directory = ""
+    if len(args) > 0:
+        directory = args[0]
+        if len(directory) > 0 and directory[-1] != "/":
+            directory = directory + "/"
+
+    files = glob.glob(directory + '.*') + glob.glob(directory + '*')
     formattedfiles = []
 
     for f in sorted(files, key=lambda v: v.upper(),):
