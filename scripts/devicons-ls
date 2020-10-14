@@ -144,6 +144,14 @@ if __name__ == '__main__':
         action="store_true",
         default=False,
      dest="is_list")
+
+    parser.add_option(
+        "-a",
+        "--all",
+        action="store_true",
+        default=False,
+     dest="is_all")
+
     (options, args) = parser.parse_args()
 
     directory = ""
@@ -152,7 +160,11 @@ if __name__ == '__main__':
         if len(directory) > 0 and directory[-1] != "/":
             directory = directory + "/"
 
-    files = glob.glob(directory + '.*') + glob.glob(directory + '*')
+    files = glob.glob(directory + '*')
+
+    if options.is_all:
+        files = files + glob.glob(directory  + '.*')
+
     formattedfiles = []
 
     for f in sorted(files, key=lambda v: v.upper(),):
