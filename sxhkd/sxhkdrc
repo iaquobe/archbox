@@ -9,13 +9,16 @@ alt + Return
 alt + @space
 	~/scripts/scratch
 
+super + u
+	firefox
+
 alt + {Down, Up}
 	amixer set Master playback 10%{-,+}
 
 alt + {Left, Right}
 	xbacklight {-dec,-inc} 10
 
-alt + i
+super + i
 	zsh -c "alacritty -e ranger"
 
 # program launcher
@@ -28,9 +31,6 @@ super + n
 
 super + shift + q
 	systemctl suspend
-
-super + u
-	firefox
 
 # make sxhkd reload its configuration files:
 super + Escape

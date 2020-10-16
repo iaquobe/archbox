@@ -4,8 +4,8 @@ window:
     columns: 0
     lines: 0
   padding:
-    x: 5
-    y: 5
+    x: 0
+    y: 0
   decorations: none
 scrolling:
   history: 10000
@@ -22,7 +22,7 @@ font:
   italic:
     family: Liberation Mono
     style: Italic
-  size: 12
+  size: 7.5
   offset:
     x: 0
     y: 0
@@ -70,7 +70,7 @@ cursor:
   unfocused_hollow: true
 key_bindings:
   # (Windows, Linux, and BSD only)
-  - { key: P,        mods: Control,       action: Paste            }
+  # - { key: P,        mods: Control,       action: Paste            }
   - { key: Insert,   mods: Shift,         action: Paste            }
   - { key: Slash,    mods: Control,       chars: "gc"              }
   - { key: Y,        mods: Control,       action: Copy             }
@@ -83,7 +83,7 @@ key_bindings:
   # - { key: N,        mods: Control|Shift, action: DecreaseFontSize }
   # Vi Mode
   - { key: Space,  mods: Control,       mode: Vi, action: ScrollToBottom          }
-  - { key: Space,  mods: Control,                 action: ToggleViMode            }
+  - { key: Escape,  mods: Control,                 action: ToggleViMode            }
   - { key: I,                           mode: Vi, action: ScrollToBottom          }
   - { key: I,                           mode: Vi, action: ToggleViMode            }
   - { key: C,      mods: Control,       mode: Vi, action: ScrollToBottom          }

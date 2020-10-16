@@ -39,6 +39,7 @@ alias v=nvim
 alias tv='muted alacritty -e nvim'
 
 alias vps='ssh iaquobe@5.189.146.192'
+alias pdb='python -m pdb'
 
 alias git='git --no-pager'
 alias gl='git log --all --graph --decorate'

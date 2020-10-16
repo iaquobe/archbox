@@ -48,7 +48,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " let g:jedi#show_call_signatures=0
 
 "coc autocomplete
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <C-Space> coc#refresh()
 
 " keyboard mapping
 map <C-BS> bcw 
