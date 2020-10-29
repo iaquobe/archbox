@@ -1,9 +1,13 @@
 # Created by newuser for 5.8
+
+
+
+### VISUALS
+
 # prompt
 PS1='%B[%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue} %~%f]%# %b'
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
-
 
 # man pages colored
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -14,9 +18,12 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
+
+
+### BINDINGS
+
 # vim bindings with normal backspace behaviour
 bindkey -v '^?' backward-delete-char
-
 
 # remove + and - bindings
 bindkey -M vicmd -r "+"
@@ -26,21 +33,37 @@ bindkey -M vicmd -r "\x2d"
 autoload -Uz compinit
 compinit
 
-# aliases
 
+
+### ALIASES
+
+# disable output and detach from terminal
 alias muted='muted() { $@ &>/dev/null &; disown }; muted'
+
+# sudo !!
 alias fuck='sudo $(fc -ln -1)'
 
+# ls with devicons
 alias ls='devicons-ls'
 alias lsl='devicons-ls -la'
 
+# suspend
+alias suspend='systemctl suspend'
+
+# vim shortcuts
 alias vim=nvim
 alias v=nvim
+
+# open vim in new terminal
 alias tv='muted alacritty -e nvim'
 
+# connect to contabo server
 alias vps='ssh iaquobe@5.189.146.192'
+
+# run script in python debugger
 alias pdb='python -m pdb'
 
+# git defaults args
 alias git='git --no-pager'
 alias gl='git log --all --graph --decorate'
 
@@ -51,14 +74,17 @@ do
 	alias $prog="muted $prog"
 done
 
+# open mpv window with webcam
 alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
-alias suspend='systemctl suspend'
 alias feh="echo sure you don't want to use vimiv"
 
+#auto cd
+setopt autocd
+
+# compile auto completion
 compdef _precommand muted
 
 
-setopt autocd
-
+# source syntax highlighting
 source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 ZSH_HIGHLIGHT_STYLES[path]=none
