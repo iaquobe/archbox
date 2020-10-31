@@ -13,7 +13,7 @@ Plug 'ryanoasis/vim-webdevicons'
 
 call plug#end()
 
-" look
+" VISUAL
 colorscheme gruvbox
 syntax on
 set relativenumber
@@ -25,37 +25,54 @@ set cursorline
 set shiftwidth=3
 set tabstop=3
 set clipboard=unnamed 
-set updatetime=300
 set list
 set listchars=tab:>-
 set spell
+" devicons
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
+
+"time for autocomplete to refresh in ms
+set updatetime=300
 
 let mapleader=" "
 
-" function
-" autocmd VimEnter * NERDTree
+
+
+" AUTOCMDS
+
+" source vimconfig when changed
 autocmd BufWritePost init.vim source $MYVIMRC
+
+"markdown to pdf when saving markdown file
 autocmd BufWritePost *.md silent !md2pdf %
 
-" dont automatically continue comment in new line
+" stop auto continue comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" python autocomplete
-" dont show completion menu automatically when typing .
-" let g:jedi#popup_on_dot = 0
-" dont show function signature popup
-" let g:jedi#show_call_signatures=0
 
 "coc autocomplete
 inoremap <silent><expr> <C-Space> coc#refresh()
 
-" keyboard mapping
-map <C-BS> bcw 
+
+
+" MAPPINGS
+
+" navigate windows with ctrl + mov
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-l> <C-W>l
 map <C-h> <C-W>h
+
+" auto correct with leader + c
 map <Leader>c mm1z=`m
 
+nmap <leader>j o<ESC>j
+nmap <leader>j o<ESC>k
 
+
+
+
+
+
+
+
+nmap <leader>k O<ESC>j
