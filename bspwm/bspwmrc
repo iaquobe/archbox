@@ -7,6 +7,7 @@ dunst &
 ~/.config/polybar/launch_polybar.sh &
 feh ~/pictures/wallpaper/gaara.jpg --bg-center -z &
 compton --config ~/.config/compton/compton.conf &
+setxkbmap de -option caps:swapescape
 
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 	bspc monitor $m -d I II III IV V VI VII VIII IX X
