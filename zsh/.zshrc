@@ -58,7 +58,7 @@ alias v=nvim
 alias tv='muted alacritty -e nvim'
 
 # connect to contabo server
-alias vps='ssh iaquobe@5.189.146.192'
+alias vps='ssh iaquobe@5.189.146.192 -o ServerAliveInterval=15'
 
 # run script in python debugger
 alias pdb='python -m pdb'
