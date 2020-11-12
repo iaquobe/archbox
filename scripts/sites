@@ -1,9 +1,20 @@
-#!/bin/zsh
+#!/bin/bash
 
 selection="$(cat $XDG_CONFIG_HOME/sites/sites | dmenu "$@")"
 option=""
 
-echo "$selection"
-[[ "$selection" =~ "^[^.]*$" ]] && option="-search"
 
-[[ "$selection" != "" ]] && firefox $option "$selection"
+# dont open new window if there is an active one on the active desktop
+active_desktop="$(wmctrl -d | grep "\*" | cut -d" " -f1)"
+wmctrl -l | grep Firefox | tr -s " " | cut -d" "  -f2 \
+	| grep -q "^$active_desktop$" \
+	&& option="$option --new-tab" \
+	|| option="$option --new-window"
+
+# if "." not in selection handle as search term
+#[[ "$selection" =~ "^.*\..*$" ]] || option="$option --search"
+
+echo $option
+
+# only launch if there is something in selection
+[[ "$selection" != "" ]] && firefox $option "$selection" 
