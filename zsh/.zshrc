@@ -46,11 +46,11 @@ alias fuck='sudo $(fc -ln -1)'
 
 # ls with colors
 alias ls='ls --color'
-LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
+LS_COLORS='di=34:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
 export LS_COLORS
 
 # alias ls with devicons when installed
-where devicons-ls && \
+where devicons-ls &>/dev/null && \
 alias ls='devicons-ls' && \
 alias lsl='devicons-ls -la'
 
