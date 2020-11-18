@@ -45,7 +45,8 @@ alias muted='muted() { $@ &>/dev/null &; disown }; muted'
 alias fuck='sudo $(fc -ln -1)'
 
 # ls with devicons
-alias ls='devicons-ls'
+where devicons-ls && \
+alias ls='devicons-ls' && \
 alias lsl='devicons-ls -la'
 
 # suspend
