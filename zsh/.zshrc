@@ -74,6 +74,9 @@ alias pdb='python -m pdb'
 alias git='git --no-pager'
 alias gl='git log --all --graph --decorate'
 
+# set kb mapping
+alias skb='setxkbmap de -option caps:swapescape'
+
 #programs that should not block the terminal
 muted_prog=( zathura firefox vimb vimiv st spotify alacritty )
 for prog in $muted_prog
