@@ -77,12 +77,10 @@ key_bindings:
   - { key: Key0,     mods: Control,       action: ResetFontSize    }
   - { key: Equals,   mods: Control,       action: IncreaseFontSize }
   - { key: Add,      mods: Control,       action: IncreaseFontSize }
-  # - { key: M,        mods: Control|Shift, action: IncreaseFontSize }
   - { key: Subtract, mods: Control,       action: DecreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
-  # - { key: N,        mods: Control|Shift, action: DecreaseFontSize }
-  - { key: U,      mods: Control, action: ScrollHalfPageUp        }
-  - { key: D,      mods: Control, action: ScrollHalfPageDown      }
+  # - { key: U,      mods: Control, action: ScrollHalfPageUp        }
+  # - { key: D,      mods: Control, action: ScrollHalfPageDown      }
   # Vi Mode
   - { key: Space,  mods: Control,       mode: Vi, action: ScrollToBottom          }
   - { key: Escape,  mods: Control,                 action: ToggleViMode            }

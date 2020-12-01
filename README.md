@@ -26,7 +26,7 @@ sets:
 
 
 
-# Terminal behaviour
+# Terminal behavior
 
 ## zsh 
 ### aliases
@@ -63,6 +63,5 @@ sets:
 
 ## alacritty
 - `ctrl + esc`: enter vim mode
-- `ctrl + u/d`: scroll
 
 
