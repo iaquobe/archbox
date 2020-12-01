@@ -9,7 +9,7 @@ Plug 'xavierd/clang_complete'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'itchyny/calendar.vim'
-
+Plug 'terryma/vim-smooth-scroll'
 
 
 call plug#end()
@@ -30,6 +30,7 @@ set tabstop=3
 set clipboard=unnamed 
 set list
 set listchars=tab:>-
+set showmode
 " devicons
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 
@@ -69,6 +70,11 @@ map <Leader>c mm1z=`m
 
 nmap <leader>j o<ESC>j
 nmap <leader>j o<ESC>k
+
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
 
 
