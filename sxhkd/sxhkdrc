@@ -18,9 +18,6 @@ alt + {Down, Up}
 alt + {Left, Right}
 	xbacklight {-dec,-inc} 10
 
-super + i
-	zsh -c "alacritty -e ranger"
-
 # program launcher
 super + @space
 	dmenu_run -fn "Liberation Mono" -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900

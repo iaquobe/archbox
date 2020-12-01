@@ -4,12 +4,12 @@ call plug#begin()
 
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
-Plug 'vim-vdebug/vdebug'
-Plug 'xavierd/clang_complete'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'itchyny/calendar.vim'
 Plug 'terryma/vim-smooth-scroll'
+" Plug 'vim-vdebug/vdebug'
+" Plug 'xavierd/clang_complete'
 
 
 call plug#end()
@@ -18,7 +18,6 @@ call plug#end()
 colorscheme gruvbox
 syntax on
 set relativenumber
-set noshowmode
 set encoding=UTF-8
 set nowrap
 set nohlsearch
@@ -68,8 +67,8 @@ map <C-h> <C-W>h
 " auto correct with leader + c
 map <Leader>c mm1z=`m
 
-nmap <leader>j o<ESC>j
-nmap <leader>j o<ESC>k
+nmap <leader>j O<ESC>j
+nmap <leader>k o<ESC>k
 
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
@@ -101,4 +100,3 @@ dig ps 8346
 dig ss 8347
 dig ts 8348
 
-nmap <leader>k O<ESC>j
