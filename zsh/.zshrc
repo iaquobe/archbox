@@ -41,28 +41,17 @@ compinit
 # disable output and detach from terminal
 alias muted='muted() { $@ &>/dev/null &; disown }; muted'
 
-# sudo !!
-alias fuck='sudo $(fc -ln -1)'
-
 # ls with colors
 alias ls='ls --color'
-LS_COLORS='di=34:fi=0:ln=36:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=32:*.rpm=90'
+LS_COLORS='di=94:fi=93:ln=96:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=92:*.rpm=90'
 export LS_COLORS
-
-# alias ls with devicons when installed
-where devicons-ls &>/dev/null && \
-alias ls='devicons-ls' && \
-alias lsl='devicons-ls -la'
 
 # suspend
 alias suspend='systemctl suspend'
 
 # vim shortcuts
 alias vim=nvim
-alias v=nvim
-
-# open vim in new terminal
-alias tv='muted alacritty -e nvim'
+alias calendar='vim -c "Calendar"'
 
 # connect to contabo server
 alias vps='ssh iaquobe@5.189.146.192 -p 8361 -o ServerAliveInterval=15'
@@ -75,7 +64,7 @@ alias git='git --no-pager'
 alias gl='git log --all --graph --decorate'
 
 #programs that should not block the terminal
-muted_prog=( zathura firefox vimb vimiv st spotify alacritty )
+muted_prog=( zathura firefox vimiv spotify alacritty )
 for prog in $muted_prog
 do
 	alias $prog="muted $prog"
@@ -83,7 +72,6 @@ done
 
 # open mpv window with webcam
 alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
-alias feh="echo sure you don't want to use vimiv"
 
 #auto cd
 setopt autocd
