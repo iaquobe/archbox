@@ -46,7 +46,7 @@ let mapleader=" "
 autocmd BufWritePost init.vim source $MYVIMRC
 
 "markdown to pdf when saving markdown file
-autocmd BufWritePost *.md silent !md2pdf %
+" autocmd BufWritePost *.md silent !md2pdf %
 
 " stop auto continue comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -67,8 +67,8 @@ map <C-h> <C-W>h
 " auto correct with leader + c
 map <Leader>c mm1z=`m
 
-nmap <leader>j O<ESC>j
-nmap <leader>k o<ESC>k
+nmap <leader>j o<ESC>k
+nmap <leader>k O<ESC>j
 
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>

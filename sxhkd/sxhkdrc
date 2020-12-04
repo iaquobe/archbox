@@ -20,11 +20,11 @@ alt + {Left, Right}
 
 # program launcher
 super + @space
-	dmenu_run -fn "Liberation Mono" -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
+	dmenu_run -fn "Liberation Mono" -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 20 -w 900
 
 #search with vimb
 super + n
-	sites -fn "Liberation Mono" -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 27 -w 900
+	sites -fn "Liberation Mono" -sb "#ebdbb2" -sf "#282828" -x 300 -y 5 -h 20 -w 900
 
 super + shift + q
 	systemctl suspend
