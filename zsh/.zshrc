@@ -54,6 +54,7 @@ alias vim=nvim
 alias v=nvim
 alias vi=nvim
 alias calendar='vim -c "Calendar -task"'
+alias rss='newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config'
 
 # connect to contabo server
 alias vps='ssh iaquobe@5.189.146.192 -p 8361 -o ServerAliveInterval=15'
