@@ -1,17 +1,17 @@
 #!/bin/bash
 
-echo "is this script in your workig dir [y/n]"
-read response
-if [ "$response" != y ]; then
-	echo "then make sure it is"
-	exit
-fi
-
-ln -s "$(pwd)/vimb" $XDG_CONFIG_HOME
-ln -s "$(pwd)/nvim" $XDG_CONFIG_HOME
-ln -s "$(pwd)/zathura" $XDG_CONFIG_HOME
-ln -s "$(pwd)/sxhkd" $XDG_CONFIG_HOME
-ln -s "$(pwd)/bspwm" $XDG_CONFIG_HOME
-ln -s "$(pwd)/dunst" $XDG_CONFIG_HOME
 
 
+SCRIPTPATH=$(dirname $(realpath $0))
+
+# set symbolic links
+ln -s "$SCRIPTPATH/vimb"		$XDG_CONFIG_HOME
+ln -s "$SCRIPTPATH/nvim"		$XDG_CONFIG_HOME
+ln -s "$SCRIPTPATH/zathura"	$XDG_CONFIG_HOME
+ln -s "$SCRIPTPATH/sxhkd"		$XDG_CONFIG_HOME
+ln -s "$SCRIPTPATH/bspwm"		$XDG_CONFIG_HOME
+ln -s "$SCRIPTPATH/dunst"		$XDG_CONFIG_HOME
+ln -s "$SCRIPTPATH/compton"	$XDG_CONFIG_HOME
+
+# install zsh syntax highligithing
+git clone "https://github.com/zsh-users/zsh-syntax-highlighting" $SCRIPTPATH/zsh/zsh-syntax-highlighting
