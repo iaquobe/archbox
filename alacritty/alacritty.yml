@@ -76,8 +76,7 @@ key_bindings:
   - { key: Y,        mods: Control,       action: Copy             }
   - { key: Key0,     mods: Control,       action: ResetFontSize    }
   - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Add,      mods: Control,       action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   # - { key: U,      mods: Control, action: ScrollHalfPageUp        }
   # - { key: D,      mods: Control, action: ScrollHalfPageDown      }

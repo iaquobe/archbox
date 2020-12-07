@@ -4,7 +4,7 @@
 sxhkd &
 dunst &
 ~/.config/polybar/launch_polybar.sh &
-feh ~/pictures/wallpaper/gaara.jpg --bg-center -z &
+feh ~/pictures/wallpaper/zelda.jpg --bg-center -z &
 compton --config ~/.config/compton/compton.conf &
 
 

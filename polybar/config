@@ -18,14 +18,18 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #282828
+background-alt = #928374
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
+foreground = #ebdbb2
+foreground-alt = #d79921
+primary = #d79921
 secondary = #e60053
 alert = #bd2c40
+
+green = #98971a
+blue = #459599
+red = #cc241d
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -40,10 +44,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
-
-;border-size = 4
-;border-color = #00000000
+line-color = ${colors.primary}
 
 padding-left = 0
 padding-right = 0
@@ -129,56 +130,7 @@ label-empty-padding = 1
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -192,7 +144,7 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.primary}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -207,7 +159,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.blue}
 label = %percentage:2%%
 
 [module/memory]
@@ -215,7 +167,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.green}
 label = %percentage_used%%
 
 [module/wlan]
@@ -224,7 +176,7 @@ interface = wlp5s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.blue}
 label-connected = %essid%
 
 format-disconnected =
@@ -233,11 +185,11 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+;ramp-signal-0 = 
+;ramp-signal-1 = 
+;ramp-signal-2 = 
+;ramp-signal-3 = 
+;ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -245,7 +197,7 @@ type = internal/network
 interface = enp3s0
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = ${colors.blue}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -268,7 +220,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.primary}
 
 label = %date% %time%
 
@@ -283,13 +235,13 @@ label-muted = 🔇 muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.red}
+bar-volume-foreground-1 = ${colors.red}
+bar-volume-foreground-2 = ${colors.red}
+bar-volume-foreground-3 = ${colors.red}
+bar-volume-foreground-4 = ${colors.red}
+bar-volume-foreground-5 = ${colors.red}
+bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -311,13 +263,13 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.red}
+bar-volume-foreground-1 = ${colors.red}
+bar-volume-foreground-2 = ${colors.red}
+bar-volume-foreground-3 = ${colors.red}
+bar-volume-foreground-4 = ${colors.red}
+bar-volume-foreground-5 = ${colors.red}
+bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2

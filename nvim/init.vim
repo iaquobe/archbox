@@ -100,3 +100,5 @@ dig ps 8346
 dig ss 8347
 dig ts 8348
 
+dig pi 960
+
