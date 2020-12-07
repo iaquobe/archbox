@@ -4,8 +4,8 @@
 sxhkd &
 dunst &
 ~/.config/polybar/launch_polybar.sh &
-feh ~/pictures/wallpaper/zelda.jpg --bg-center -z &
-compton --config ~/.config/compton/compton.conf &
+feh ~/pictures/wallpaper/botw.jpg --bg-center -z &
+picom &
 
 
 EDITOR=/usr/bin/nvim
@@ -16,7 +16,7 @@ for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 	bspc monitor $m -d I II III IV V VI VII VIII IX X
 done
 
-bspc config border_width			1
+bspc config border_width			2
 bspc config top_padding 			25
 bspc config focused_border_color '#d79921'
 bspc config window_gap				10
