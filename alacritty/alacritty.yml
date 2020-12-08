@@ -62,8 +62,8 @@ colors:
 
   selection:
     text: '#282828'
-    background: '#d79921'
-    white:   '0xffffff'
+    background: '#d65d0e'
+    white:   'ebdbb2'
 
 cursor:
   style: Block
