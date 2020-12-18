@@ -68,6 +68,7 @@ alias gl='git log --all --graph --decorate'
 
 # set kb mapping
 alias skb='setxkbmap de -option caps:swapescape'
+alias uskb='setxkbmap de -option'
 
 #programs that should not block the terminal
 muted_prog=( zathura firefox vimiv spotify alacritty )
@@ -85,6 +86,8 @@ setopt autocd
 # compile auto completion
 compdef _precommand muted
 
+# for java application that dont show anything otherwise
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # source syntax highlighting
 source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

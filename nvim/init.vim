@@ -34,7 +34,7 @@ set showmode
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 
 "time for autocomplete to refresh in ms
-set updatetime=300
+set updatetime=400
 
 let mapleader=" "
 
@@ -58,6 +58,11 @@ inoremap <silent><expr> <C-Space> coc#refresh()
 
 " MAPPINGS
 
+function! InsertLines(count,direction)
+	execute "normal ". a:count. "o" 
+	execute "normal ". a:count. "k" 
+endfunction
+
 " navigate windows with ctrl + mov
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -67,13 +72,25 @@ map <C-h> <C-W>h
 " auto correct with leader + c
 map <Leader>c mm1z=`m
 
-nmap <leader>j o<ESC>k
-nmap <leader>k O<ESC>j
+function! InsertLines(direction)
+	if a:direction == 1
+		execute "normal ". v:count1. "o" 
+		execute "normal ". v:count1. "k" 
+	elseif a:direction == -1
+		execute "normal ". v:count1. "O" 
+		execute "normal ". v:count1. "j" 
+	endif
+endfunction
+
+nmap <leader>j :<c-u>call InsertLines(1)<ESC>
+nmap <leader>k :<c-u>call InsertLines(-1)<ESC>
+
 
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+
 
 
 
