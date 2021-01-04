@@ -30,7 +30,7 @@ sets:
 
 ## zsh 
 ### aliases
-1. `calendar` opens `calendar.vim`
+1. `calendar` opens `calcurse`
 2. `vps` shortcut to `ssh` into my vps (don't worry, it's saved)
 3. `pdb` python debugger
 4. `git` defaults to `--no-pager`
@@ -44,6 +44,7 @@ sets:
 - detects `ssh` in prompt
 - sets `EDITOR` variables
 - `less` colors for man pages
+- `cd` also runs `ls`
 
 ## vim
 ### Plugins
@@ -59,6 +60,7 @@ sets:
 - `ctrl + [mov key]`: move window
 - some mathematical digraphs
 - `<leader>c`: autocorrect
+- `<leader>j/k`: insterts line bellow/above, command is countable
 
 
 ## alacritty

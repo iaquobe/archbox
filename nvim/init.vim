@@ -78,12 +78,13 @@ function! InsertLines(direction)
 		execute "normal ". v:count1. "k" 
 	elseif a:direction == -1
 		execute "normal ". v:count1. "O" 
-		execute "normal ". v:count1. "j" 
+		execute "normal j" 
 	endif
 endfunction
 
 nmap <leader>j :<c-u>call InsertLines(1)<ESC>
 nmap <leader>k :<c-u>call InsertLines(-1)<ESC>
+
 
 
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>

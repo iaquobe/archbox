@@ -31,6 +31,7 @@ bindkey -M vicmd -r "+"
 bindkey -M vicmd -r "\x2d"
 
 # loading functions 
+setopt completealiases
 autoload -Uz compinit
 compinit
 
@@ -39,12 +40,15 @@ compinit
 ### ALIASES
 
 # disable output and detach from terminal
-alias muted='muted() { $@ &>/dev/null &; disown }; muted'
+alias muted='() { $@ &>/dev/null &; disown }'
 
 # ls with colors
 alias ls='ls --color'
 LS_COLORS='di=94:fi=93:ln=96:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=92:*.rpm=90'
 export LS_COLORS
+
+# autols when cd
+alias cd='() {cd $1 && ls}'
 
 # suspend
 alias suspend='systemctl suspend'
@@ -53,7 +57,7 @@ alias suspend='systemctl suspend'
 alias vim=nvim
 alias v=nvim
 alias vi=nvim
-alias calendar='vim -c "Calendar -task"'
+alias calendar='calcurse'
 alias rss='newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config'
 
 # connect to contabo server
