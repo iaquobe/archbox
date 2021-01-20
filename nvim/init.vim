@@ -17,19 +17,14 @@ call plug#end()
 " VISUAL
 colorscheme gruvbox
 syntax on
-set relativenumber
+set relativenumber cursorline nowrap nohlsearch showmode
+set list listchars=tab:>-
+set shiftwidth=3 tabstop=3
+
 set encoding=UTF-8
-set nowrap
-set nohlsearch
-set nospell
-set number
-set cursorline
-set shiftwidth=3
-set tabstop=3
+set spell spelllang=en_us,de_de
+
 set clipboard=unnamed 
-set list
-set listchars=tab:>-
-set showmode
 " devicons
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 

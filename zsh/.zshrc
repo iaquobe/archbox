@@ -43,7 +43,7 @@ compinit
 alias muted='() { $@ &>/dev/null &; disown }'
 
 # ls with colors
-alias ls='ls --color'
+alias ls='ls --color=auto'
 LS_COLORS='di=94:fi=93:ln=96:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=92:*.rpm=90'
 export LS_COLORS
 

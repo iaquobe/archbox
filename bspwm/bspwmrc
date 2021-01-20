@@ -5,7 +5,7 @@ sxhkd &
 dunst &
 ~/.config/polybar/launch_polybar.sh &
 feh ~/pictures/wallpaper/botw.jpg --bg-center -z &
-picom &
+# picom &
 
 
 EDITOR=/usr/bin/nvim
@@ -35,7 +35,6 @@ bspc rule -a Screenkey manage=off
 bspc rule -a firefox:Toolkit sticky=on state=floating rectangle=640x360+1250+690
 bspc rule -a scratchpad sticky=on hidden=on state=floating follow=on rectangle=1000x150+310+5 border=on monitor=focused
 
-# [ "$(ps -x | grep -c 'scratchpad')" -le "1" ] && st -c scratchpad &
 
 # launch kdeconnect if existing
-# [ -f "/usr/lib/kdeconnectd" ] && /usr/lib/kdeconnectd &
+[ -x "/usr/lib/kdeconnectd" ] && /usr/lib/kdeconnectd &
