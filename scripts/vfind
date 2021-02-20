@@ -1,0 +1,15 @@
+#!/bin/bash
+
+files="$(grep -i $@ | cut -d: -f1 | uniq)"
+
+while true
+do
+	# get file with fuzzy search
+	file="$(echo "$files" | fzf --preview "grep -i -C 5 \"$1\" {}")"
+
+	# if empty (you pressed escape) exit out of programm
+	[[ -z $file ]] && exit
+
+	# open vim with thing searched and highlighted
+	nvim -c "set hlsearch | /$1\c" $file
+done

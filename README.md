@@ -12,13 +12,14 @@ sets:
 2. `EDITOR` to `nvim`
 
 ## sxhkd
-- `super + u`: frefox
-- `alt + @space`: scratchpad
-- `super + shift + q`: suspend
-- `super + n`: sites
-- `super + @space`: dmenu run
-- `alt + {Down, Up}`: volume control
-- `alt + {Left, Right}`: backlight control
+- `super + u`           : frefox
+- `alt + @space`        : scratchpad
+- `super + shift + q`   : suspend
+- `super + n`           : sites
+- `super + @space`      : dmenu run
+- `alt + {Down, Up}`    : volume control
+- `alt + {Left, Right}` : backlight control
+- `ctrl + super + x`    : take screenshot
 
 ## Compton
 - excludes fade from scratchpad
@@ -48,22 +49,48 @@ sets:
 
 ## vim
 ### Plugins
-- `nerdtree`: file explorer
+- `nerdtree`         : file explorer
 - `calendar` 
 - `smooth-scroll`
-- `coc`: completion system (`python`,`css`,`html`,`json`,`c`)
-- `gruvbox`: theme
+- `coc`              : completion system (`python`,`css`,`html`,`json`,`c`)
+- `gruvbox`          : theme
 - `devicons`
 
 ### Settings
 - dont continue comments
-- `ctrl + [mov key]`: move window
+- `ctrl + [mov key]`      : move window
 - some mathematical digraphs
-- `<leader>c`: autocorrect
-- `<leader>j/k`: insterts line bellow/above, command is countable
+- `<leader>c`             : autocorrect
+- `<leader><backtick>`    : backticks word
+- `<leader>j/k`           : insterts line bellow/above, command is countable
 
 
 ## alacritty
 - `ctrl + esc`: enter vim mode
 
+
+
+# Scripts
+
+## vfind
+search file content and open them in `vim`
+- `greps` case insensitive and pipes to `fzf` to select file
+- `fzf` previews found patterns
+- `vim` opens searching the pattern and with highlitghting
+
+##### Usage
+	vfind PATTERN FILES...
+
+## zfind
+search file content and open them in `zathura`
+- `greps` case insensitive and pipes to `fzf` to select file
+- `fzf` previews found patterns (uses `pdftotext`)
+- `zathura` opens searching the pattern 
+- does not swallow window, but I'm planing to implement it
+
+##### Usage
+	zfind PATTERN FILES...
+
+## scratchpad
+Toggles visibility of terminal floating atop
 

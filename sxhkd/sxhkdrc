@@ -18,6 +18,9 @@ alt + {Down, Up}
 alt + {Left, Right}
 	xbacklight {-dec,-inc} 10
 
+ctrl + super + x
+	scrot --focused ~/pictures/scrot/pic
+
 # program launcher
 super + @space
 	dmenu_run -fn "Liberation Mono" -nf "#ebdbb2" -nb "#282828" -sb "#d79921" -sf "#282828" -x 10 -y 5 -h 20 -w 1900

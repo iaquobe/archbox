@@ -8,6 +8,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'itchyny/calendar.vim'
 Plug 'terryma/vim-smooth-scroll'
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " Plug 'vim-vdebug/vdebug'
 " Plug 'xavierd/clang_complete'
 
@@ -17,7 +18,7 @@ call plug#end()
 " VISUAL
 colorscheme gruvbox
 syntax on
-set relativenumber cursorline nowrap nohlsearch showmode
+set number relativenumber cursorline nowrap nohlsearch showmode
 set list listchars=tab:>-
 set shiftwidth=3 tabstop=3
 
@@ -66,6 +67,12 @@ map <C-h> <C-W>h
 
 " auto correct with leader + c
 map <Leader>c mm1z=`m
+
+" set ticks around word with leader + `
+map <Leader>` i`<ESC>ea`<ESC>
+
+" delete last typed word with ctrl + u
+inoremap <C-u> <C-w>
 
 function! InsertLines(direction)
 	if a:direction == 1

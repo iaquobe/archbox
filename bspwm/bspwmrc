@@ -24,7 +24,7 @@ bspc config active_border_color '#1d2021'
 bspc config window_gap				10
 bspc config split_ratio				0.52
 bspc config borderless_monocle	true
-bspc config gapless_monocle		true
+bspc config gapless_monocle		false
 
 bspc rule -a Audio-recorder state=tiled sticky=off
 bspc rule -a Surf state=tiled
@@ -34,6 +34,9 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a firefox:Toolkit sticky=on state=floating rectangle=640x360+1250+690
 bspc rule -a scratchpad sticky=on hidden=on state=floating follow=on rectangle=1000x150+310+5 border=on monitor=focused
+
+bspc rule -a discord desktop=^10
+bspc rule -a spotify desktop=^10
 
 
 # launch kdeconnect if existing
