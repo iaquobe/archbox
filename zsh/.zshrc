@@ -47,8 +47,10 @@ alias ls='ls --color=auto'
 LS_COLORS='di=94:fi=93:ln=96:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=92:*.rpm=90'
 export LS_COLORS
 
-# autols when cd
-alias cd='() {cd $1 && ls}'
+# autols when cd, mv, and cp
+alias cd='() {cd $@ && ls}'
+alias cp='() {cp $@ && ls}'
+alias mv='() {mv $@ && ls}'
 
 # suspend
 alias suspend='systemctl suspend'

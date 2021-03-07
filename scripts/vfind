@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files="$(grep -i $@ | cut -d: -f1 | uniq)"
+files="$(grep -i "$@" | cut -d: -f1 | uniq)"
 
 while true
 do

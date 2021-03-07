@@ -18,7 +18,7 @@ call plug#end()
 " VISUAL
 colorscheme gruvbox
 syntax on
-set number relativenumber cursorline nowrap nohlsearch showmode
+set number relativenumber cursorline nowrap nohlsearch showmode ignorecase
 set list listchars=tab:>-
 set shiftwidth=3 tabstop=3
 

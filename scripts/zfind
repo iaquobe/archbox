@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files="$(pdfgrep -i $@ | cut -d: -f1 | uniq)"
+files="$(pdfgrep -i "$@" | cut -d: -f1 | uniq)"
 
 while true
 do
