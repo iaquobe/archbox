@@ -25,6 +25,9 @@ set shiftwidth=3 tabstop=3
 set encoding=UTF-8
 set spell spelllang=en_us,de_de
 
+"fold
+set foldmethod=indent foldnestmax=1 foldcolumn=1 foldlevel=99
+
 set clipboard=unnamed 
 " devicons
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
@@ -36,16 +39,35 @@ let mapleader=" "
 
 
 
-" AUTOCMDS
+" IMPORTS
+source <sfile>:h/init/latex.vim
 
-" source vimconfig when changed
-autocmd BufWritePost init.vim source $MYVIMRC
+
+
+" AUTOCMDS
+function! CompileLatex()
+	let pdflatex="pdflatex ". expand('%'). "; "
+	let bibtex="bibtex ". expand('%:r'). "; "
+	silent execute "!(". pdflatex. bibtex. pdflatex. pdflatex. ") &>compile.log &"
+endfunction
+
+augroup autocommands
+	autocmd!
+
+	" source vim config when cahnged
+	autocmd BufWritePost init.vim source $MYVIMRC
+
+	" compile latex file when chaged
+	autocmd BufWritePost *.tex call CompileLatex()
+augroup end
+
 
 "markdown to pdf when saving markdown file
 " autocmd BufWritePost *.md silent !md2pdf %
 
 " stop auto continue comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 "coc autocomplete
 inoremap <silent><expr> <C-Space> coc#refresh()
@@ -54,10 +76,6 @@ inoremap <silent><expr> <C-Space> coc#refresh()
 
 " MAPPINGS
 
-function! InsertLines(count,direction)
-	execute "normal ". a:count. "o" 
-	execute "normal ". a:count. "k" 
-endfunction
 
 " navigate windows with ctrl + mov
 map <C-j> <C-W>j
