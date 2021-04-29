@@ -13,14 +13,14 @@ Die location ist eigentlich egal, solang du es von sxhkd richtig aufrufst.
 
 > ~/scripts/scratch:  
 >
->		#!/usr/bin/bash
+>		#!/usr/bin/bash  
 >
->		id="$(xdotool search --class scratchpad)" 
->		[ -z "$id" ] && xtoolwait alacritty --class scratchpad,scratchpad 
+>		id="$(xdotool search --class scratchpad)"   
+>		[ -z "$id" ] && xtoolwait alacritty --class scratchpad,scratchpad   
 >
->		id="$(xdotool search --class scratchpad)" 
->		bspc node "$id" -m focused 
->		bspc node "$id" --flag hidden -f
+>		id="$(xdotool search --class scratchpad)"   
+>		bspc node "$id" -m focused   
+>		bspc node "$id" --flag hidden -f  
 
 #### wm rules
 
