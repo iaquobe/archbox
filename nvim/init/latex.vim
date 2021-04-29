@@ -11,4 +11,5 @@ augroup latex_autocommands
 
 	" compile latex file when chaged
 	autocmd BufWritePost *.tex call CompileLatex()
+	autocmd FileType tex setlocal spell 
 augroup end

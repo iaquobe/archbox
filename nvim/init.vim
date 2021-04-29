@@ -23,7 +23,7 @@ set list listchars=tab:>-
 set shiftwidth=3 tabstop=3
 
 set encoding=UTF-8
-set spell spelllang=en_us,de_de
+set spelllang=en_us,de_de
 
 "fold
 set foldmethod=indent foldnestmax=1 foldcolumn=1 foldlevel=99
@@ -45,11 +45,6 @@ source <sfile>:h/init/latex.vim
 
 
 " AUTOCMDS
-function! CompileLatex()
-	let pdflatex="pdflatex ". expand('%'). "; "
-	let bibtex="bibtex ". expand('%:r'). "; "
-	silent execute "!(". pdflatex. bibtex. pdflatex. pdflatex. ") &>compile.log &"
-endfunction
 
 augroup autocommands
 	autocmd!
@@ -57,8 +52,6 @@ augroup autocommands
 	" source vim config when cahnged
 	autocmd BufWritePost init.vim source $MYVIMRC
 
-	" compile latex file when chaged
-	autocmd BufWritePost *.tex call CompileLatex()
 augroup end
 
 
@@ -84,7 +77,7 @@ map <C-l> <C-W>l
 map <C-h> <C-W>h
 
 " auto correct with leader + c
-map <Leader>c mm1z=`m
+map <Leader>c mm0]s1z=`m
 
 " set ticks around word with leader + `
 map <Leader>` i`<ESC>ea`<ESC>

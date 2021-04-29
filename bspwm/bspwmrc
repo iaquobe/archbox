@@ -4,7 +4,7 @@
 sxhkd &
 dunst &
 ~/.config/polybar/launch_polybar.sh &
-feh ~/pictures/wallpaper/botw.jpg --bg-center -z &
+feh --bg-center $(ls ~/pictures/wallpapers/* | sort -R | tail -1) &
 # picom &
 
 

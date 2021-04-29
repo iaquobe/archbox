@@ -12,3 +12,4 @@ set statusbar-fg  "#ebdbb2"
 set completion-fg  "#ebdbb2"
 
 
+set statusbar-basename true
