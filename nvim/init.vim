@@ -21,6 +21,7 @@ syntax on
 set number relativenumber cursorline nowrap nohlsearch showmode ignorecase
 set list listchars=tab:>-
 set shiftwidth=3 tabstop=3
+let g:tex_flavor = 'latex'
 
 set encoding=UTF-8
 set spelllang=en_us,de_de
@@ -40,7 +41,8 @@ let mapleader=" "
 
 
 " IMPORTS
-source <sfile>:h/init/latex.vim
+" source <sfile>:h/init/latex.vim
+" source <sfile>:h/init/c.vim
 
 
 

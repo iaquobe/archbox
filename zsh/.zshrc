@@ -51,7 +51,7 @@ export LS_COLORS
 alias cd='() {cd $@ && ls}'
 alias cp='() {cp $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
 alias mv='() {mv $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
-alias rm='() {rm $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
+alias rm='() {trash $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
 
 # suspend
 alias suspend='systemctl suspend'
