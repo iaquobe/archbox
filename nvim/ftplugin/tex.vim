@@ -1,10 +1,9 @@
 
 " FUNCTIONS
 function! CompileLatex()
-	let pdflatex="pdflatex ". expand('%'). "; "
-	let bibtex="bibtex ". expand('%:r'). "; "
-	silent execute "!(". pdflatex. bibtex. pdflatex. pdflatex. ") &>compile.log &"
+	silent execute "!(make; make clean) &>compile.log &"
 endfunction
+
 
 
 function! EnvList(ArgLead, CmdLine, CursorPos)
@@ -39,8 +38,10 @@ augroup latex_autocommands
 
 	" compile latex file when chaged
 	autocmd BufWritePost * call CompileLatex()
-	autocmd VimLeave * !make clean
 augroup end
+
+
+
 
 
 " OPTIONS
