@@ -1,7 +1,8 @@
 
 " FUNCTIONS
 function! CompileLatex()
-	silent execute "!(make; make clean) &>compile.log &"
+	"silent execute !(make; make clean) &>compile.log &
+	silent execute '!(latexmk -pdf -interaction=nonstopmode; latexmk -C) &>compile.log'
 endfunction
 
 
