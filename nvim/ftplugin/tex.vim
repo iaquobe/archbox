@@ -49,4 +49,5 @@ setlocal spell
 
 " MAPPINGS
 noremap <Leader>b :call BeginEnv()<ESC>
-noremap <Leader>i i\item \textit{}:<ESC>
+noremap <Leader>i o\item \textit{}:<ESC>
+
