@@ -1,2 +1,2 @@
 
-set expandtab
+setlocal expandtab

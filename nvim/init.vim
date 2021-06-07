@@ -40,11 +40,6 @@ let mapleader=" "
 
 
 
-" IMPORTS
-" source <sfile>:h/init/latex.vim
-" source <sfile>:h/init/c.vim
-
-
 
 " AUTOCMDS
 
@@ -53,6 +48,7 @@ augroup autocommands
 
 	" source vim config when cahnged
 	autocmd BufWritePost init.vim source $MYVIMRC
+	"autocmd VimEnter * NERDTree | wincmd p 
 
 augroup end
 

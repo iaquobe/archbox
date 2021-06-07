@@ -2,7 +2,7 @@
 " FUNCTIONS
 function! CompileLatex()
 	"silent execute !(make; make clean) &>compile.log &
-	silent execute '!(latexmk -pdf -interaction=nonstopmode; latexmk -C) &>compile.log'
+	silent execute '!(latexmk -bibtex -pdf -interaction=nonstopmode; latexmk -c) &>compile.log &'
 endfunction
 
 
@@ -32,7 +32,6 @@ function! BeginEnv()
 endfunction
 
 
-
 " AUTOCOMMANDS
 augroup latex_autocommands
 	autocmd!
@@ -50,3 +49,4 @@ setlocal spell
 
 " MAPPINGS
 noremap <Leader>b :call BeginEnv()<ESC>
+noremap <Leader>i i\item \textit{}:<ESC>

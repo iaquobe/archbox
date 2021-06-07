@@ -22,7 +22,7 @@ alt + {Left, Right}
 	xbacklight {-dec,-inc} 10
 
 ctrl + super + x
-	scrot --focused ~/pictures/scrot/pic
+	scrot -focused ~/pictures/scrot/%Y-%m-%d-%T-screenshot.png
 
 # program launcher
 super + @space
