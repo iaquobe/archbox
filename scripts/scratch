@@ -1,8 +1,11 @@
 #!/usr/bin/bash
 
+tool="xtoolwait alacritty --class scratchpad,scratchpad"
+which xtoolwait || tool="alacritty --class scratchpad,scratchpad"
+
 
 id="$(xdotool search --class scratchpad)" 
-[ -z "$id" ] && xtoolwait alacritty --class scratchpad,scratchpad 
+[ -z "$id" ] && $($tool)
 
 id="$(xdotool search --class scratchpad)" 
 bspc node "$id" -m focused 

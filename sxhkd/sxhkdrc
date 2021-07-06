@@ -19,7 +19,7 @@ alt + {Down, Up}
 	amixer set Master playback 10%{-,+}
 
 alt + {Left, Right}
-	xbacklight {-dec,-inc} 10
+	light {-U,-A} 2
 
 ctrl + super + x
 	scrot -focused ~/pictures/scrot/%Y-%m-%d-%T-screenshot.png
