@@ -61,7 +61,6 @@ alias suspend='systemctl suspend'
 alias vim=nvim
 alias v=nvim
 alias vi=nvim
-alias calendar='calcurse'
 alias rss='newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config'
 
 # connect to contabo server

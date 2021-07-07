@@ -318,7 +318,7 @@ ramp-capacity-1-foreground = ${colors.red}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 80
 format = <ramp><label>
 format-underline = ${colors.yellow}
 format-warn = <ramp><label-warn>
