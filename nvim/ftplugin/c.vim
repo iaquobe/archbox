@@ -16,3 +16,7 @@ endfunction
 
 " MAPPINGS
 noremap <leader>d :call OpenDefinition()
+
+
+setlocal foldmethod=syntax
+normal zM 
