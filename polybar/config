@@ -58,7 +58,7 @@ module-margin-right = 0
 font-0 = liberation mono:bold:pixelsize=12;1
 font-1 = feather:style=Regular:size=12
 
-modules-left = bspwm 
+modules-left = bspwm desktop
 modules-center = 
 modules-right = filesystem memory cpu temperature bluetooth wlan eth brightness battery date 
 
@@ -96,6 +96,11 @@ label-mounted-underline = ${colors.green}
 label-unmounted = %mountpoint% not mounted
 
 
+[module/desktop]
+type = custom/text
+; content = 
+content-foreground = ${colors.foreground-alt}
+content-background = ${colors.background}
 
 [module/bspwm]
 type = internal/bspwm
