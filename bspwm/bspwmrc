@@ -3,7 +3,7 @@
 
 sxhkd &
 dunst &
-~/.config/polybar/launch_polybar.sh &
+~/.config/polybar/launch-polybar.sh &
 feh -z --bg-fill ~/pictures/wallpapers &
 
 EDITOR=/usr/bin/nvim

@@ -347,7 +347,7 @@ interval = 3.0
 format-prefix = 
 format-underline = ${colors.red}
 format-prefix-foreground = ${colors.foreground-alt}
-exec = light
+exec = ~/.config/polybar/backlight.sh
 
 [module/bluetooth]
 type = custom/script
