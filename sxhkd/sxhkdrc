@@ -29,7 +29,7 @@ super + @space
 	rofi -show run
 
 super + shift + w
-	feh --bg-fill -z ~/pictures/wallpapers
+	~/scripts/change-wallpaper
 
 super + shift + q
 	systemctl suspend
