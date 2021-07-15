@@ -4,7 +4,7 @@
 sxhkd &
 dunst &
 ~/.config/polybar/launch-polybar.sh &
-feh --bg-fill $(ls ~/pictures/wallpapers | shuf -n 1) &
+feh --bg-fill ~/pictures/wallpapers/"$(ls ~/pictures/wallpapers | shuf -n 1)" &
 
 EDITOR=/usr/bin/nvim
 setxkbmap de -option caps:swapescape
