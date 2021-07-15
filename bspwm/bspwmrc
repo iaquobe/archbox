@@ -4,9 +4,7 @@
 sxhkd &
 dunst &
 ~/.config/polybar/launch_polybar.sh &
-feh --bg-center $(ls ~/pictures/wallpapers/* | sort -R | tail -1) &
-# picom &
-
+feh -z --bg-fill ~/pictures/wallpapers &
 
 EDITOR=/usr/bin/nvim
 setxkbmap de -option caps:swapescape
@@ -34,6 +32,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a firefox:Toolkit sticky=on state=floating rectangle=640x360+1250+690
 bspc rule -a scratchpad sticky=on hidden=on state=floating follow=on rectangle=1000x150+310+5 border=on monitor=focused
+bspc rule -a calcurse desktop=^5 focus=on
 
 bspc rule -a discord desktop=^10
 bspc rule -a spotify desktop=^10

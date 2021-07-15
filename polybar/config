@@ -61,7 +61,7 @@ font-1 = feather:style=regular:size=12
 
 modules-left = bspwm
 modules-center = 
-modules-right = xbacklight alsa filesystem memory cpu temperature wlan eth battery date powermenu
+modules-right = filesystem memory cpu temperature bluetooth wlan eth brightness battery date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -107,12 +107,12 @@ interval = 25
 
 mount-0 = /
 
-label-mounted =  %percentage_used%%
+label-mounted = %{F#d79921} %{F-}%percentage_used%%
 label-mounted-underline = ${colors.green}
 label-unmounted = %mountpoint% not mounted
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = 
 
 [module/bspwm]
 type = internal/bspwm
@@ -292,19 +292,24 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
+time-format = %H:%M
+
 format-charging-prefix =  
 format-charging-prefix-foreground = ${colors.foreground-alt}
-format-charging = <label-charging>
+format-charging = <label-charging> 
 format-charging-underline = ${colors.red}
+label-charging = %percentage%%(%time%)
 
 format-discharging-prefix =  
 format-discharging-prefix-foreground = ${colors.foreground-alt}
-format-discharging = <label-discharging>
+format-discharging = <label-discharging> 
 format-discharging-underline = ${self.format-charging-underline}
+label-discharging = %percentage%%(%time%)
 
-format-full-prefix = " "
+format-full-prefix =  
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
+label-full = %percentage%
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -333,6 +338,26 @@ ramp-0 = 
 ramp-1 =  
 ramp-2 =  
 ramp-foreground = ${colors.foreground-alt} 
+
+[module/brightness]
+type = custom/script
+label = %output%
+interval = 3.0
+
+format-prefix = 
+format-underline = ${colors.red}
+format-prefix-foreground = ${colors.foreground-alt}
+exec = light
+
+[module/bluetooth]
+type = custom/script
+label = %output%
+interval = 5.0
+
+format-prefix = 
+format-underline = ${colors.blue}
+format-prefix-foreground = ${colors.foreground-alt}
+exec = python3 ~/.config/polybar/bt-stat.py
 
 
 [settings]

@@ -1,1 +1,1 @@
-alacritty -e calcurse
+alacritty --class calcurse,calcurse -e calcurse
