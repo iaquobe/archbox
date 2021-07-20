@@ -201,7 +201,7 @@ label = %date% %time%
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 99
 
 time-format = %H:%M
 
@@ -219,6 +219,7 @@ label-discharging = %percentage%%(%time%)
 
 format-full-prefix =  
 format-full-prefix-foreground = ${colors.foreground-alt}
+format-full = <label-full> 
 format-full-underline = ${self.format-charging-underline}
 label-full = %percentage%
 
@@ -274,7 +275,7 @@ interval = 5.0
 format-prefix = 
 format-underline = ${colors.blue}
 format-prefix-foreground = ${colors.foreground-alt}
-exec = python3 ~/.config/polybar/bt-stat.py
+exec = ~/.config/polybar/bt-stat.sh
 
 
 

@@ -1,5 +1,8 @@
 #!/bin/sh
 
 battery_status=$( acpi | cut -d, -f2 | tr -d "% ")
-(( battery_status > 20 )) || notify-send Battery "Battery low $battery_status%"
+discharging=$(acpi | cut -d: -f2 | cut -d, -f1 | tr -d " ")
+(( battery_status < 20 )) \
+	&& [[ "$discharging" == "Discharging" ]] \
+	&& notify-send Battery "Battery low $battery_status%"
 

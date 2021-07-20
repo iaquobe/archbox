@@ -15,7 +15,8 @@ class BTdevice():
 
 
 bt_devices = {BTdevice(name='P2-L', mac='E8:07:BF:BC:01:B1'),
-        BTdevice(name='P2', mac='E8:07:BF:BF:B1:03')}
+        BTdevice(name='P2', mac='E8:07:BF:BF:B1:03'),
+        BTdevice(name='Soundlink', mac='04:52:C7:2F:75:4D')}
 
 if which("bluetoothctl") is not None:
     bt_connected = "no"
