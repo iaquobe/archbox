@@ -2,7 +2,6 @@
 
 echo COURSES: 
 cd ~/courses
-git status | head -2
 
 git status -s 
 
@@ -10,13 +9,11 @@ git status -s
 echo 
 echo ORGANISATION: 
 cd ~/org
-git status | head -2
 
 git status -s 
 
 echo 
-echo ORGANISATION: 
+echo ARCHBOX: 
 cd ~/projects/archbox
-git status | head -2
 
 git status -s 
