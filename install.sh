@@ -1,10 +1,15 @@
 #!/bin/bash
 XDG_CONFIG_HOME=~/.config
 
-packages=( git bspwm dunst polybar rofi feh neovim xrandr texlive npm sxiv xrandr xbindkeys xvkbd )
+packages="alacritty zsh bspwm sxhkd dunst polybar rofi feh neovim xrandr texlive npm sxiv xrandr xbindkeys xvkbd light trash xdotool"
 sudo dnf install $packages
 
+# change default shell
+usermod -s /bin/zsh $USER
 
+# set timezone
+timedatectl set-ntp 1
+timedatectl set-timezone Europe/Berlin
 
 SCRIPTPATH=$(dirname $(realpath $0))
 
@@ -15,7 +20,7 @@ ln -s "$SCRIPTPATH/dunst"			$XDG_CONFIG_HOME
 
 ln -s "$SCRIPTPATH/polybar"		$XDG_CONFIG_HOME
 mkdir ~/.local/share/fonts
-cp "$SCRIPTPATH/polybar/feather.ttf"		~/.local/share/fonts/feather.ttf
+cp "$SCRIPTPATH/polybar/icomoon-feather.ttf"		~/.local/share/fonts/icomoon-feather.ttf
 ln -s "$SCRIPTPATH/rofi"			$XDG_CONFIG_HOME
 
 ln -s "$SCRIPTPATH/zsh/"			$XDG_CONFIG_HOME
@@ -38,5 +43,6 @@ git clone "https://github.com/zsh-users/zsh-syntax-highlighting" $SCRIPTPATH/zsh
 # install vim stuff
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-nvim -c PlugInstall -c "CocInstall coc-python coc-clangd coc-html coc-texlab coc-sh"
+nvim -c "PlugInstall | qa "
+nvim -c "CocInstall coc-python coc-clangd coc-html coc-texlab coc-sh | qa"
 

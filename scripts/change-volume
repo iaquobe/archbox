@@ -1,18 +1,11 @@
 #!/bin/bash
 
-volume_values=( 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%)
+[ $1 = "-G" ] && pactl list sinks | grep "^\s*Volume:" | head -1 | cut -d/ -f2 | tr -d [:blank:]  && exit 0
 
-get_index() {
-	current_value="$(light -G)"
-	for i in "${!light_values[@]}"
-	do
-		[ "${light_values[$i]}" = "$current_value" ] \
-			&& echo $i
-	done
-}
+for sink in $(pactl list sinks | grep "Name:" | cut -d: -f2 )
+do 
+	[ $1 = "-A" ] && pactl set-sink-volume $sink +5%
+	[ $1 = "-U" ] && pactl set-sink-volume $sink -5%
+	[ $1 = "-S" ] && pactl set-sink-volume $sink $2
+done
 
-current_index=$(get_index)
-
-[ $1 = "-A" ] 
-[ $1 = "-U" ]
-[ $1 = "-G" ]

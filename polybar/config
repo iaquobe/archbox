@@ -60,7 +60,7 @@ font-1 = icomoon\-feather:style=Regular:size=12
 
 modules-left = bspwm desktop
 modules-center = 
-modules-right = filesystem memory cpu temperature bluetooth wlan eth brightness battery date 
+modules-right = filesystem memory cpu temperature bluetooth wlan eth volume brightness battery date 
 
 tray-position = right
 tray-padding = 2
@@ -252,6 +252,16 @@ ramp-1 = 
 ramp-2 =  
 ramp-foreground = ${colors.foreground-alt} 
 
+
+[module/volume]
+type = custom/script
+label = %output%
+interval = 3.0
+
+format-prefix = 
+format-underline = ${colors.red}
+format-prefix-foreground = ${colors.foreground-alt}
+exec = change-volume -G
 
 
 [module/brightness]

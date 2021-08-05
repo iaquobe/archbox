@@ -16,7 +16,7 @@ super + u
 	firefox
 
 alt + {Down, Up}
-	amixer set Master playback 10%{-,+}
+	change-volume {-U,-A}
 
 alt + {Left, Right}
 	change-light {-U,-A}
