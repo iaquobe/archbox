@@ -1,29 +1,16 @@
-# Created by newuser for 5.8
-
-
-
 ### VISUALS
-
 # prompt
 PS1='%B[%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue} %4~%f]%# %b'
 [[ -n "$SSH_CLIENT" ]] && PS1="%F{blue}SSH:%f$PS1"
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export PAGER="less"
+export LS_COLORS='di=94:fi=93:ln=96:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=92:*.rpm=90'
 
-# man pages colored
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 
 
 ### BINDINGS
-
 # vim bindings with normal backspace behaviour
 bindkey -v '^?' backward-delete-char
 
@@ -38,64 +25,56 @@ compinit
 
 
 
+
 ### ALIASES
-
-# disable output and detach from terminal
+# muted programs are detached from terminal and dont produce output 
 alias muted='() { $@ &>/dev/null &; disown }'
-
-# ls with colors
-alias ls='ls --color=auto'
-LS_COLORS='di=94:fi=93:ln=96:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=92:*.rpm=90'
-export LS_COLORS
-
-# autols when cd, mv, and cp
-alias cd='() {cd $@ && ls}'
-alias cp='() {cp $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
-alias mv='() {mv $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
-alias rm='() {trash $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
-
-# suspend
-alias suspend='systemctl suspend'
-
-# vim shortcuts
-alias vim=nvim
-alias v=nvim
-alias vi=nvim
-alias rss='newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config'
-
-# connect to contabo server
-alias vps='ssh iaquobe@5.189.146.192 -p 8361 -o ServerAliveInterval=15'
-
-# run script in python debugger
-alias pdb='python -m pdb'
-
-# git defaults args
-alias git='git --no-pager'
-alias gl='git log --all --graph --decorate'
-
-# set kb mapping
-alias skb='setxkbmap de -option caps:swapescape'
-alias uskb='setxkbmap de -option'
-
-#programs that should not block the terminal
 muted_prog=( zathura firefox vimiv spotify alacritty )
 for prog in $muted_prog
 do
 	alias $prog="muted $prog"
 done
 
-# open mpv window with webcam
+# colored man page
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
+}
+
+# short aliases
+alias ls='ls --color=auto'
+alias cd='() {cd $@ && ls}'
+alias cp='() {cp $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
+alias mv='() {mv $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
+alias rm='() {trash $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
+alias vim=nvim
+alias v=nvim
+alias vi=nvim
+alias rss='newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config'
+alias vps='ssh iaquobe@5.189.146.192 -p 8361 -o ServerAliveInterval=15'
+alias pdb='python -m pdb'
+alias git='git --no-pager'
+alias gl='git log --all --graph --decorate'
+alias skb='setxkbmap de -option caps:swapescape'
+alias uskb='setxkbmap de -option'
 alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
 
-#auto cd
-setopt autocd
 
-# compile auto completion
+
+
+
+
+# compiles autocomplete
 compdef _precommand muted
 
-# for java application that dont show anything otherwise
+# fixes some applications
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# source syntax highlighting
+# syntax highlighting
 source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 ZSH_HIGHLIGHT_STYLES[path]=none

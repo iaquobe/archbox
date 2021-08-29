@@ -1,7 +1,7 @@
 #!/bin/bash
 XDG_CONFIG_HOME=~/.config
 SCRIPTPATH=$(dirname $(realpath $0))
-PACKAGES="alacritty zsh bspwm sxhkd dunst polybar rofi feh neovim xrandr texlive npm sxiv xrandr xbindkeys xvkbd light trash xdotool"
+PACKAGES="util-linux-user alacritty zsh bspwm sxhkd dunst polybar rofi feh neovim xrandr texlive npm sxiv xrandr xbindkeys xvkbd light xdotool"
 TIMEZONE="Europe/Berlin"
 
 
@@ -9,27 +9,32 @@ TIMEZONE="Europe/Berlin"
 
 # install common packages
 echo INSTALLING COMMON PACKAGES
+echo installing packages: $PACKAGES
+sudo dnf upgrade 
 sudo dnf install $PACKAGES
 
 
 
 
-# change default shell
-echo CHANGE SHELL TO ZSH
-usermod -s /bin/zsh $USER
+# default configurations
+echo DEFAULT CONFIGURATIONS
+echo change to zsh 
+chsh -s /bin/zsh $USER
 
-
-
-
-# set timezone
-echo CHANGE TIMEZONE TO $TIMEZONE
+echo set timezone to $TIMEZONE
 timedatectl set-ntp 1
 timedatectl set-timezone "$TIMEZONE"
 
+echo disable gnome shell
+sudo systemctl disable gdm.service
 
+echo "changing back to pulseaudio (because of bluetooth issues)"
+sudo dnf swap --allowerasing pipewire-pulseaudio pulseaudio
+sudo dnf install pulseaudio-utils 
 
+echo disabling beeping module
+echo blacklist pcspkr >> /etc/modprobe.d/blacklist
 
-# installing font
 echo INSTALLING SYMBOL FONT
 mkdir ~/.local/share/fonts
 echo "$SCRIPTPATH/polybar/icomoon-feather.ttf ->	~/.local/share/fonts/icomoon-feather.ttf"
@@ -110,4 +115,12 @@ nvim -c "CocInstall coc-python coc-clangd coc-html coc-texlab coc-sh | qa"
 
 
 echo DONE!
-exit
+read -p "do you want to reboot (y/n)?" answer
+case ${answer:0:1} in 
+	y|Y )
+		reboot
+		;;
+	*)
+		exit
+		;;
+esac
