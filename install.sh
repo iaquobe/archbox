@@ -1,48 +1,113 @@
 #!/bin/bash
 XDG_CONFIG_HOME=~/.config
+SCRIPTPATH=$(dirname $(realpath $0))
+PACKAGES="alacritty zsh bspwm sxhkd dunst polybar rofi feh neovim xrandr texlive npm sxiv xrandr xbindkeys xvkbd light trash xdotool"
+TIMEZONE="Europe/Berlin"
 
-packages="alacritty zsh bspwm sxhkd dunst polybar rofi feh neovim xrandr texlive npm sxiv xrandr xbindkeys xvkbd light trash xdotool"
-sudo dnf install $packages
+
+
+
+# install common packages
+echo INSTALLING COMMON PACKAGES
+sudo dnf install $PACKAGES
+
+
+
 
 # change default shell
+echo CHANGE SHELL TO ZSH
 usermod -s /bin/zsh $USER
 
-# set timezone
-timedatectl set-ntp 1
-timedatectl set-timezone Europe/Berlin
 
-SCRIPTPATH=$(dirname $(realpath $0))
+
+
+# set timezone
+echo CHANGE TIMEZONE TO $TIMEZONE
+timedatectl set-ntp 1
+timedatectl set-timezone "$TIMEZONE"
+
+
+
+
+# installing font
+echo INSTALLING SYMBOL FONT
+mkdir ~/.local/share/fonts
+echo "$SCRIPTPATH/polybar/icomoon-feather.ttf ->	~/.local/share/fonts/icomoon-feather.ttf"
+cp "$SCRIPTPATH/polybar/icomoon-feather.ttf"		~/.local/share/fonts/icomoon-feather.ttf
+
+
+
 
 # set symbolic links
-ln -s "$SCRIPTPATH/sxhkd"			$XDG_CONFIG_HOME
-ln -s "$SCRIPTPATH/bspwm"			$XDG_CONFIG_HOME
-ln -s "$SCRIPTPATH/dunst"			$XDG_CONFIG_HOME
+echo SETTING SYMBOLIC LINKS
 
-ln -s "$SCRIPTPATH/polybar"		$XDG_CONFIG_HOME
-mkdir ~/.local/share/fonts
-cp "$SCRIPTPATH/polybar/icomoon-feather.ttf"		~/.local/share/fonts/icomoon-feather.ttf
-ln -s "$SCRIPTPATH/rofi"			$XDG_CONFIG_HOME
+echo "$SCRIPTPATH/sxhkd ->		$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/sxhkd"		$XDG_CONFIG_HOME
 
-ln -s "$SCRIPTPATH/zsh/"			$XDG_CONFIG_HOME
-ln -s "$SCRIPTPATH/nvim"			$XDG_CONFIG_HOME
-ln -s "$SCRIPTPATH/zathura"		$XDG_CONFIG_HOME
-ln -s "$SCRIPTPATH/alacritty"		$XDG_CONFIG_HOME
+echo "$SCRIPTPATH/bspwm ->		$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/bspwm"		$XDG_CONFIG_HOME
 
+echo "$SCRIPTPATH/dunst ->		$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/dunst"		$XDG_CONFIG_HOME
+
+echo "$SCRIPTPATH/polybar ->	$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/polybar"	$XDG_CONFIG_HOME
+
+echo "$SCRIPTPATH/rofi ->		$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/rofi"		$XDG_CONFIG_HOME
+
+echo "$SCRIPTPATH/zsh ->		$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/zsh/"		$XDG_CONFIG_HOME
+
+echo "$SCRIPTPATH/nvim ->		$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/nvim"		$XDG_CONFIG_HOME
+
+echo "$SCRIPTPATH/zathura ->	$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/zathura"	$XDG_CONFIG_HOME
+
+echo "$SCRIPTPATH/alacritty ->$XDG_CONFIG_HOME"
+ln -s "$SCRIPTPATH/alacritty"	$XDG_CONFIG_HOME
+
+echo "$SCRIPTPATH/.xbindkeysrc ->	~"
 ln -s "$SCRIPTPATH/.xbindkeysrc"	~
+
+echo "$SCRIPTPATH/.xinitrc ->	~"
 ln -s "$SCRIPTPATH/.xinitrc"		~
+
+echo "$SCRIPTPATH/.zshenv ->	~"
 ln -s "$SCRIPTPATH/.zshenv"		~
+
+echo "$SCRIPTPATH/.inputrc ->	~"
 ln -s "$SCRIPTPATH/.inputrc"		~
+
+echo "$SCRIPTPATH/scripts ->	~"
 ln -s "$SCRIPTPATH/scripts"		~
 
+echo "$SCRIPTPATH/wallpapers ->	~/Pictures/"
 ln -s "$SCRIPTPATH/wallpapers"	~/Pictures/
 
+
+
+
 # install zsh syntax highligithing
+echo INSTALLING ZSH SYNTAX HIGHLIGHTING 
 git clone "https://github.com/zsh-users/zsh-syntax-highlighting" $SCRIPTPATH/zsh/zsh-syntax-highlighting
 
 
-# install vim stuff
+
+
+# install von plugins
+echo INSTALLING VIM PLUGGINS
+echo installing vimplug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+echo installing plugins
 nvim -c "PlugInstall | qa "
+echo installing coc autocompletion
 nvim -c "CocInstall coc-python coc-clangd coc-html coc-texlab coc-sh | qa"
 
+
+
+
+echo DONE!
+exit
