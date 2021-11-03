@@ -46,8 +46,9 @@ augroup end
 
 " OPTIONS
 setlocal spell
+setlocal tw=80 colorcolumn=80
 
 " MAPPINGS
 noremap <Leader>b :call BeginEnv()<ESC>
-noremap <Leader>i o\item \textit{}:<ESC>
+noremap <Leader>i o\item \textbf{}:<ESC>
 
