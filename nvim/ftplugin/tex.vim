@@ -13,6 +13,7 @@ function! EnvList(ArgLead, CmdLine, CursorPos)
 				\"align",
 				\"itemize",
 				\"enumerate",
+				\"equation",
 				\"description",
 				\]
 	let completion = filter(list, 'v:val =~ "^' . a:ArgLead . '"')
