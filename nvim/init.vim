@@ -35,7 +35,8 @@ set clipboard=unnamedplus
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 set updatetime=400
 let g:limelight_conceal_ctermfg = 'gray'
-let g:goyo_height=90
+let g:goyo_height="90%"
+let g:goyo_width=90
 
 let mapleader=" "
 
