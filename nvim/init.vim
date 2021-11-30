@@ -14,6 +14,7 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-fugitive'
 " Plug 'vim-vdebug/vdebug'
 " Plug 'xavierd/clang_complete'
 call plug#end()
@@ -35,6 +36,8 @@ set clipboard=unnamedplus
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 set updatetime=400
 let g:limelight_conceal_ctermfg = 'gray'
+let g:goyo_width = "80%"
+let g:goyo_linenr = 'relativenumber'
 
 let mapleader=" "
 
@@ -91,7 +94,7 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
-nmap <leader>y :Goyo 90<CR>
+nmap <leader>y :Goyo<CR>
 
 
 

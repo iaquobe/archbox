@@ -37,11 +37,11 @@ done
 # colored man page
 
 # short aliases
-alias ls='ls --color=auto'
+alias ls='ls -A --color=auto'
 alias cd='() {cd $@ && ls}'
-alias cp='() {cp $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
-alias mv='() {mv $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
-alias rm='() {trash $@ && ls $(dirname $(readlink -f ${@[-1]}))}'
+alias cp='() {cp $@ && ls $(dirname $(readlink -f "${@[-1]}"))}'
+alias mv='() {mv $@ && ls $(dirname $(readlink -f "${@[-1]}"))}'
+alias rm='() {trash $@ && ls $(dirname $(readlink -f "${@[-1]}"))}'
 alias vim=nvim
 alias v=nvim
 alias vi=nvim
@@ -53,6 +53,7 @@ alias gl='git log --all --graph --decorate'
 alias skb='setxkbmap de -option caps:swapescape'
 alias uskb='setxkbmap de -option'
 alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
+alias gitcompush='() {git add .; git commit $@; git push}'
 
 
 

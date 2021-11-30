@@ -6,8 +6,8 @@ export XDG_DATA_HOME=~/.local/share
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
-PATH=$PATH":/home/iaquobe/bin"
-PATH=$PATH":/home/iaquobe/.local/bin"
-PATH=$PATH":/home/iaquobe/scripts"
+PATH=$PATH":/home/$USER/bin"
+PATH=$PATH":/home/$USER/.local/bin"
+PATH=$PATH":/home/$USER/scripts"
 PATH=$PATH":."
 
