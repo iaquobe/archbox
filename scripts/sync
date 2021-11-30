@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+cd ~/courses
+git add .
+git commit -m "sync"
+git push 
+
+cd ~/projects/archbox
+git add .
+git commit -m "sync"
+git push 

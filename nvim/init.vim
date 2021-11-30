@@ -44,13 +44,24 @@ let mapleader=" "
 
 
 " AUTOCMDS
+function! s:goyo_enter()
+	set relativenumber number
+	set scrolloff=999
+	Limelight
+endfunction
+
+function! s:goyo_leave()
+	set scrolloff=0
+	Limelight!
+endfunction
 
 " Reload config on write
 augroup autocommands
 	autocmd!
 	autocmd BufWritePost init.vim source $MYVIMRC
-	autocmd! User GoyoEnter Limelight
 	autocmd! User GoyoLeave Limelight!
+	autocmd! User GoyoEnter nested call <SID>goyo_enter()
+	autocmd! User GoyoLeave nested call <SID>goyo_leave()
 augroup end
 
 " stop auto continue comment
