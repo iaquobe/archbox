@@ -3,7 +3,6 @@
 
 sxhkd &
 dunst &
-picom &
 ~/.config/polybar/launch-polybar.sh &
 change-wallpaper
 
