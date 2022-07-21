@@ -17,6 +17,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()}}
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 " Plug 'vim-vdebug/vdebug'
 " Plug 'xavierd/clang_complete'
 call plug#end()
