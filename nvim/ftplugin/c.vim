@@ -19,4 +19,4 @@ noremap <leader>d :call OpenDefinition()
 
 
 setlocal foldmethod=syntax
-normal zM 
+" normal zM 

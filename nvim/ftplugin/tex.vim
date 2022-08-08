@@ -52,4 +52,5 @@ setlocal tw=80 colorcolumn=80
 " MAPPINGS
 noremap <Leader>b :call BeginEnv()<ESC>
 noremap <Leader>i o\item \textbf{}:<ESC>
+noremap <Leader>f a\textbf{
 
