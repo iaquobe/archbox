@@ -64,7 +64,7 @@ esac
 # set symbolic links
 echo
 echo SYMLINK CONFIG FILES
-XDG_CONFIG_FILES="sxhkd bspwm dunst polybar rofi zsh nvim zathura alacritty"
+XDG_CONFIG_FILES="sxhkd bspwm dunst polybar picom rofi zsh nvim zathura alacritty"
 HOME_FILES=".xbindkeys .xinitrc .zshenv .inputrc scripts"
 ERROR_FILES=""
 
@@ -106,9 +106,9 @@ echo INSTALLING VIM PLUGGINS
 echo "install:	vimplug"
 sh -c 'curl -sfLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 echo "install:	plugins"
-nvim -es -c "PlugInstall | qa "
+nvim -c "PlugInstall | qa "
 echo "install:	coc autocomplete"
-nvim -es -c "CocInstall coc-python coc-clangd coc-html coc-texlab coc-sh | qa"
+nvim -c "CocInstall coc-python coc-clangd coc-html coc-texlab coc-sh | qa"
 
 
 
