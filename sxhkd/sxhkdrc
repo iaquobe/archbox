@@ -12,6 +12,9 @@ alt + Return
 alt + @space
 	~/scripts/scratch
 
+ctrl + @space
+	dunstctl close
+
 super + u
 	firefox
 
