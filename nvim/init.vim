@@ -74,7 +74,7 @@ augroup end
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "coc autocomplete
-inoremap <silent><expr> <C-Space> coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
 
 
 
