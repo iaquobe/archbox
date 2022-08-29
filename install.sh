@@ -64,7 +64,7 @@ esac
 # set symbolic links
 echo
 echo SYMLINK CONFIG FILES
-XDG_CONFIG_FILES="sxhkd bspwm dunst polybar rofi zsh nvim zathura alacritty"
+XDG_CONFIG_FILES="sxhkd bspwm dunst polybar rofi zsh nvim zathura alacritty picom"
 HOME_FILES=".xbindkeys .xinitrc .zshenv .inputrc scripts"
 ERROR_FILES=""
 

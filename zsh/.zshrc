@@ -17,10 +17,10 @@ bindkey -v '^?' backward-delete-char
 bindkey -M vicmd -r "+"
 bindkey -M vicmd -r "\x2d"
 
-# loading functions 
+# loading functions and case insensitive
 setopt completealiases
-autoload -Uz compinit
-compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit && compinit
 
 
 
