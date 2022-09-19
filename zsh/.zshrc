@@ -45,6 +45,7 @@ alias rm='() {trash "$@" && ls "$(dirname "$(readlink -f "${@[-1]}")")"}'
 alias vim=nvim
 alias v=nvim
 alias vi=nvim
+alias idv='nvim -S ~/.config/nvim/idv.vim'
 alias rss='newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config'
 alias vps='ssh iaquobe@5.189.146.192 -p 8361 -o ServerAliveInterval=15'
 alias pdb='python -m pdb'
