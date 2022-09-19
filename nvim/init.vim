@@ -35,7 +35,6 @@ set foldmethod=indent foldnestmax=1 foldcolumn=1 foldlevel=99
 set clipboard=unnamedplus
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 set updatetime=400
-set formatoptions-=c formatoptions-=r formatoptions-=o
 
 let g:tex_flavor = 'latex'
 let g:limelight_conceal_ctermfg = 'gray'
@@ -70,8 +69,12 @@ augroup autocommands
 	autocmd! User GoyoEnter nested call <SID>goyo_enter()
 	autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-	" terminal without line numbers
+	" stop auto continue comment
+	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+	" terminal without line numbers and enter insert
 	autocmd TermOpen * setlocal nonumber norelativenumber
+	autocmd BufWinEnter,WinEnter * if &buftype == 'terminal' | silent! normal i | endif
 augroup end
 
 
@@ -82,6 +85,9 @@ augroup end
 
 "coc autocomplete 
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" exit term mode
+tnoremap <C-o> <C-\><C-N>
 
 " navigation 
 tnoremap <C-h> <C-\><C-N><C-w>h
