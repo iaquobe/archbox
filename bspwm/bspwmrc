@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 
+autorandr -c
 sxhkd &
 dunst &
 picom &
@@ -40,5 +41,5 @@ bspc rule -a spotify desktop=^10
 
 
 # launch kdeconnect if existing
-[ -x "/usr/lib/kdeconnectd" ] && /usr/lib/kdeconnectd &
+# [ -x "/usr/lib/kdeconnectd" ] && /usr/lib/kdeconnectd &
 scratch

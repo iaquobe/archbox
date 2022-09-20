@@ -8,7 +8,6 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ryanoasis/vim-webdevicons'
 Plug 'itchyny/calendar.vim'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
@@ -18,6 +17,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
@@ -45,6 +45,9 @@ let g:gutentags_cache_dir='~/.local/share/gutentags'
 let mapleader=" "
 
 
+" COMMANDS
+
+command! X wa|qa
 
 
 " AUTOCMDS
