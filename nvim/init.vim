@@ -36,6 +36,12 @@ set clipboard=unnamedplus
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 set updatetime=400
 
+
+let g:NERDTreeMapJumpNextSibling = ''
+let g:NERDTreeMapJumpPrevSibling = ''
+
+let g:tex_flavor = 'latex'
+let g:tex_flavor = 'latex'
 let g:tex_flavor = 'latex'
 let g:limelight_conceal_ctermfg = 'gray'
 let g:goyo_linenr = 'relativenumber'
