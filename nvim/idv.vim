@@ -4,7 +4,7 @@ wincmd J
 term
 vsplit
 term
-res 5
+res 10
 setlocal winfixheight
 wincmd k
 wincmd l
