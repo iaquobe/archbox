@@ -56,7 +56,9 @@ alias uskb='setxkbmap de -option'
 alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
 alias gitcompush='() {git add .; git commit $@; git push}'
 
-
+alias v0='printf '\''0\nv<USER>\n<PASSWD>\ny'\'' | /opt/cisco/anyconnect/bin/vpn -s connect vpn2.mpdl.mpg.de; ip link show cscotun0;'
+alias v1='printf '\''1\nv<USER>\n<PASSWD>\ny'\'' | /opt/cisco/anyconnect/bin/vpn -s connect vpn2.mpdl.mpg.de; ip link show cscotun0;'
+alias vD='/opt/cisco/anyconnect/bin/vpn disconnect; ip link show cscotun0;'
 
 
 
