@@ -26,9 +26,10 @@ function! BeginEnv()
 	try
 		let choiche = input("begin: ", "", "customlist,EnvList")
 
-		let begin="\\begin{" . choiche . "}\n" 
+		let beg="\\begin{" . choiche . "}\n" 
 		let end="\\end{" . choiche . "}"
-		execute "normal o" . begin . end 
+		execute "normal o" . beg
+		execute "normal o" . end
 	endtry
 endfunction
 

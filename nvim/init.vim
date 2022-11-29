@@ -35,6 +35,7 @@ set foldmethod=indent foldnestmax=1 foldcolumn=1 foldlevel=99
 set clipboard=unnamedplus
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 set updatetime=400
+set mouse=
 
 
 let g:NERDTreeMapJumpNextSibling = ''
