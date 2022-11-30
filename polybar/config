@@ -23,9 +23,11 @@ background-alt = #928374
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebdbb2
 foreground-alt = #d79921
+# foreground-alt = #a89984
 primary = #d79921
 secondary = #e60053
 alert = #bd2c40
+
 
 green = #98971a
 blue = #459599
@@ -56,7 +58,7 @@ module-margin-left = 1
 module-margin-right = 0
 
 font-0 = liberation mono:bold:pixelsize=12;1
-font-1 = icomoon\-feather:style=Regular:size=12
+font-1 = feather:style=Regular:size=12
 
 modules-left = i3 desktop
 modules-center = 
@@ -91,7 +93,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#d79921} %{F-}%percentage_used%%
+label-mounted = %{F#d79921} %{F-}%percentage_used%%
 label-mounted-underline = ${colors.green}
 label-unmounted = %mountpoint% not mounted
 
@@ -106,22 +108,25 @@ content-background = ${colors.background}
 type = internal/i3
 pin-workspaces = true
 index-sort = true
-;   
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;  
-ws-icon-5 = 6;  
-ws-icon-default = 
+;       
+ws-icon-0 = 1; 
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-3 = 4; 
+ws-icon-4 = 5;  
+ws-icon-5 = 6;   
+ws-icon-6 = 7;   
+ws-icon-default = 
 
 format = <label-state> <label-mode>
 label-mode = %mode%
-label-mode-backn = ${colors.background}
-label-mode-padding = 2
+label-mode-background = ${colors.background}
+label-mode-padding = 1
 # 
 label-focused = %index% %icon%
 label-focused-background = ${colors.background-alt}
+#label-focused-foreground = ${colors.foreground-alt}
+label-focused-foreground = ${colors.foreground}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 1
 # 
@@ -133,18 +138,16 @@ label-unfocused-padding = 1
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix =  
+format-prefix =  
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.yellow}
 label = %percentage:2%%
 
 ;           
-;          
-; 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.green}
 label = %percentage_used%%
@@ -164,10 +167,11 @@ format-disconnected =
 
 ;           
 ;          
-ramp-signal-0 =   
-ramp-signal-1 =   
-ramp-signal-2 =   
-ramp-signal-3 =   
+ramp-signal-0 =   
+ramp-signal-1 =   
+   
+ramp-signal-2 =   
+ramp-signal-3 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
 
@@ -252,11 +256,11 @@ format-warn-underline = ${self.format-underline}
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
-
+;
 ;          
-ramp-0 =  
-ramp-1 =  
-ramp-2 =  
+ramp-0 =
+ramp-1 =
+ramp-2 =
 ramp-foreground = ${colors.foreground-alt} 
 
 
@@ -265,7 +269,7 @@ type = custom/script
 label = %output%
 interval = 3.0
 
-format-prefix = 
+format-prefix = 
 format-underline = ${colors.red}
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/get-volume.sh
@@ -277,7 +281,7 @@ label = %output%
 interval = 3.0
 
 ;          
-format-prefix = 
+format-prefix = 
 format-underline = ${colors.red}
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/backlight.sh
