@@ -18,6 +18,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'ryanoasis/vim-devicons'
+Plug 'wesQ3/vim-windowswap'
 call plug#end()
 
 
@@ -112,6 +113,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
 
 " auto correct with leader + c
 map <Leader>c mm0]s1z=`m
