@@ -190,10 +190,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-	bindsym h resize shrink width 10 px or 1 ppt
-		bindsym j resize grow height 10 px or 1 ppt
-		bindsym k resize shrink height 10 px or 1 ppt
-		bindsym l resize grow width 10 px or 1 ppt
+		bindsym h resize grow width 10 px or 1 ppt
+		bindsym j resize shrink height 10 px or 1 ppt
+		bindsym k resize grow height 10 px or 1 ppt
+		bindsym l resize shrink width 10 px or 1 ppt
 
 # same bindings, but for the arrow keys
 		bindsym Left resize shrink width 10 px or 10 ppt
