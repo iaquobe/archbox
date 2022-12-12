@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #282828
+background = #cc282828
 background-alt = #928374
 ;foreground = ${xrdb:color7:#222}
 foreground = #ebdbb2
@@ -133,6 +133,11 @@ label-focused-padding = 1
 label-unfocused = %index% %icon%
 label-unfocused-background = ${colors.background}
 label-unfocused-padding = 1
+
+label-urgent = %index% %icon%
+label-urgent-foreground = ${colors.red}
+label-urgent-underline= ${colors.red}
+label-urgent-padding = 1
 
 label-visible = %index% %icon%
 label-visible-underline = ${colors.primary}

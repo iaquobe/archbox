@@ -37,6 +37,7 @@ set clipboard=unnamedplus
 set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 12
 set updatetime=400
 set mouse=
+highlight Normal ctermbg=none
 
 
 let g:NERDTreeMapJumpNextSibling = ''

@@ -11,7 +11,7 @@
 client.focused          #282828 #282828 #d79921 #d79921   #d79921 
 client.focused_inactive #282828 #282828 #ebdbb2 #282828   #282828
 client.unfocused        #282828 #282828 #5f676a #282828   #282828
-client.urgent           #2f343a #98971a #ebdbb2 #98971a   #98971a
+client.urgent           #282828 #282828 #cc241d #282828   #cc241d
 client.placeholder      #282828 #282828 #ebdbb2 #282828   #282828 
 
 set $mod Mod1
@@ -86,6 +86,11 @@ for_window [instance="scratchpad"] resize set width 1000px height 150px
 for_window [instance="scratchpad"] move scratchpad
 # for_window [instance="scratchpad"] scratchpad sho
 bindsym $mod+t [instance="scratchpad"] scratchpad show
+
+
+# make picture in picture sticky
+for_window [title="Picture-in-Picture"] sticky enabled
+for_window [title="Picture-in-Picture"] border pixel 2
 
 # change focus
 bindsym $mod+h focus left
