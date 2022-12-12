@@ -1,4 +1,4 @@
-
+unclutter & 
 setxkbmap de -option caps:swapescape &
 xbindkeys
 

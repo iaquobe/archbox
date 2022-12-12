@@ -7,12 +7,12 @@
 
 # i3 config file (v4)
 #
-# class                 border  backgr. text    indicator child_border
-client.focused          #282828 #282828 #d79921 #d79921   #d79921 
-client.focused_inactive #282828 #282828 #ebdbb2 #282828   #282828
-client.unfocused        #282828 #282828 #5f676a #282828   #282828
-client.urgent           #282828 #282828 #cc241d #282828   #cc241d
-client.placeholder      #282828 #282828 #ebdbb2 #282828   #282828 
+# class                 border  backgr.   text    indicator child_border
+client.focused          #282828 #282828   #d79921   #d79921   #d79921 
+client.focused_inactive #282828 #282828bb #ebdbb2   #282828   #282828
+client.unfocused        #282828 #282828bb #5f676abb #282828   #282828
+client.urgent           #282828 #282828bb #cc241d   #282828   #cc241d
+client.placeholder      #282828 #282828bb #ebdbb2   #282828   #282828 
 
 set $mod Mod1
 
@@ -20,6 +20,7 @@ gaps inner 5
 gaps top 25
 default_border pixel 2
 focus_follows_mouse no
+mouse_warping none
 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -49,7 +50,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- lock
 exec --no-startup-id picom -b
 exec --no-startup-id change-wallpaper
 exec --no-startup-id dunst &
-exec --no-startup-id ~/.config/polybar/launch-polybar.sh &
+# exec --no-startup-id ~/.config/polybar/launch-polybar.sh &
 exec --no-startup-id killall nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
