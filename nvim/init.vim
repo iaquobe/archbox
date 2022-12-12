@@ -63,11 +63,13 @@ command! X wa|qa
 function! s:goyo_enter()
 	set relativenumber number
 	set scrolloff=999
+	hi Normal ctermbg=none
 	Limelight
 endfunction
 
 function! s:goyo_leave()
 	set scrolloff=0
+	hi Normal ctermbg=none
 	Limelight!
 endfunction
 
