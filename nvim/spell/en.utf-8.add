@@ -50,3 +50,9 @@ Rekusionsstufe
 malloc
 subres
 Wrapperfunktion
+RPC
+RPCs
+AppendEntries
+NextIndex
+decrement
+config
