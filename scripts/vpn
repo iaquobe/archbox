@@ -1,0 +1,6 @@
+#!/bin/bash 
+
+read -s -p "password:" PASSWD; 
+printf "'0\nlamberthartmann\n$PASSWD\ny'" \
+	| /opt/cisco/anyconnect/bin/vpn -s connect vpn2.mpdl.mpg.de
+ip link show cscotun0;

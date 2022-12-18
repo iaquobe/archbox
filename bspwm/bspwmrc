@@ -1,5 +1,19 @@
 #!/bin/zsh
 
+autorandr -c 
+
+# add bspwm monitors to xrandr connected outputs
+for monitor in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+	bspc monitor $monitor -d I II III IV V VI VII VIII IX X
+done
+
+# delete monitors that are in bspwm but not connected to xrandr
+for monitor in $(comm -23 <(bspc query -M --names | sort) <(xrandr | grep " connected" | cut -d" " -f1 | sort)); do
+	bspc monitor $monitor -r
+done
+
+# adopt nodes from deleted monitors
+bspc wm -o 
 
 sxhkd &
 dunst &
@@ -10,10 +24,6 @@ change-wallpaper
 EDITOR=/usr/bin/nvim
 setxkbmap de -option caps:swapescape
 
-
-for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-	bspc monitor $m -d I II III IV V VI VII VIII IX X
-done
 
 bspc config border_width			2
 bspc config top_padding 			25
@@ -40,5 +50,5 @@ bspc rule -a spotify desktop=^10
 
 
 # launch kdeconnect if existing
-[ -x "/usr/lib/kdeconnectd" ] && /usr/lib/kdeconnectd &
+# [ -x "/usr/lib/kdeconnectd" ] && /usr/lib/kdeconnectd &
 scratch
