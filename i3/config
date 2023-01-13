@@ -16,6 +16,7 @@ client.placeholder      #282828aa #282828aa #ebdbb2   #282828   #282828
 
 set $mod Mod1
 
+smart_borders on
 gaps inner 5
 gaps top 2
 default_border pixel 2
