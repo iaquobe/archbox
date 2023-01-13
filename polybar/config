@@ -38,10 +38,12 @@ cyan = #689d6a
 
 [bar/example]
 monitor = ${env:MONITOR:}
-width = 99.48%
+width = 100%
+;width = 99.48%
 height = 20
-offset-x = 0.26% 
-offset-y = 5
+offset-x = 0
+;offset-x = 0.26% 
+;offset-y = 5 
 radius = 0.0
 fixed-center = false
 
@@ -71,7 +73,7 @@ tray-padding = 2
 ;wm-restack = bspwm
 wm-restack = i3
 
-override-redirect = true
+;override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
