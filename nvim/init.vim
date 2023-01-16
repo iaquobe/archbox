@@ -117,6 +117,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
+vnoremap <leader>m mm:s/\%V.*\%V./$&$<CR>`m
 
 " auto correct with leader + c
 map <Leader>c mm0]s1z=`m
