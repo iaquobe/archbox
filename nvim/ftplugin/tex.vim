@@ -48,7 +48,8 @@ augroup end
 
 " OPTIONS
 setlocal spell
-setlocal tw=80 colorcolumn=80
+" setlocal tw=80 
+setlocal colorcolumn=80
 
 " MAPPINGS
 noremap <Leader>b :call BeginEnv()<ESC>
