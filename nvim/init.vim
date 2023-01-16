@@ -19,6 +19,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wesQ3/vim-windowswap'
+Plug 'wellle/context.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 call plug#end()
 
 
@@ -44,13 +47,14 @@ let g:NERDTreeMapJumpNextSibling = ''
 let g:NERDTreeMapJumpPrevSibling = ''
 
 let g:tex_flavor = 'latex'
-let g:tex_flavor = 'latex'
-let g:tex_flavor = 'latex'
 let g:limelight_conceal_ctermfg = 'gray'
 let g:goyo_linenr = 'relativenumber'
 let g:goyo_height="90%"
 let g:goyo_width=90
 let g:gutentags_cache_dir='~/.local/share/gutentags'
+let g:context_enabled=1
+let g:context_nvim_no_redraw = 1
+let g:context_presenter = 'nvim-float'
 let mapleader=" "
 
 
@@ -143,6 +147,19 @@ noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+
+" change tabs
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>n gt
+noremap <leader>p gT
 
 " goyo open
 nmap <leader>y :Goyo<CR>
