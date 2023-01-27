@@ -83,10 +83,9 @@ bindsym $mod+Shift+o exec --no-startup-id systemctl suspend
 # scratchpad
 exec --no-startup-id alacritty --class scratchpad
 for_window [instance="scratchpad"] floating enabled
-for_window [instance="scratchpad"] move position 310px 5px
+for_window [instance="scratchpad"] move position 0px 0px
 for_window [instance="scratchpad"] resize set width 1000px height 150px
 for_window [instance="scratchpad"] move scratchpad
-# for_window [instance="scratchpad"] scratchpad sho
 bindsym $mod+t [instance="scratchpad"] scratchpad show
 
 

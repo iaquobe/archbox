@@ -1,6 +1,8 @@
 
 function! CompileMarkdown()
-	silent execute "!pandoc % -o %.pdf"
+	if g:autocompile
+		silent execute "!pandoc % -o %.pdf & "
+	endif
 endfunction
 
 augroup markdown_autocommands
@@ -12,3 +14,4 @@ augroup end
 
 set tw=80 colorcolumn=80
 set spell
+let g:autocompile = 1

@@ -27,7 +27,7 @@ autoload -Uz compinit && compinit
 
 ### ALIASES
 # muted programs are detached from terminal and dont produce output 
-alias muted='() { $@ &>/dev/null &; disown }'
+alias muted='() { "$@" &>/dev/null &; disown }'
 muted_prog=( zathura firefox vimiv spotify alacritty )
 for prog in $muted_prog
 do
@@ -37,7 +37,7 @@ done
 # colored man page
 
 # short aliases
-alias ls='ls -A --color=auto'
+alias ls='ls --color=auto'
 alias cd='() {cd "$@" && ls}'
 alias cp='() {cp "$@" && ls "$(dirname "$(readlink -f "${@[-1]}")")"}'
 alias mv='() {mv "$@" && ls "$(dirname "$(readlink -f "${@[-1]}")")"}'
