@@ -14,4 +14,4 @@ augroup end
 
 set tw=80 colorcolumn=80
 set spell
-let g:autocompile = 1
+let g:autocompile = 0

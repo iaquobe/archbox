@@ -8,7 +8,9 @@ set default-bg rgba(0,0,0,0.2)
 set completion-gb "#282828"
 set inputbar-bg "#282828"
 set statusbar-bg "#282828"
+set notification-bg "#282828"
 
+set notification-fg  "#ebdbb2"
 set statusbar-fg  "#ebdbb2"
 set completion-fg  "#ebdbb2"
 

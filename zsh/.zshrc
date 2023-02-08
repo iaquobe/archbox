@@ -38,10 +38,10 @@ done
 
 # short aliases
 alias ls='ls --color=auto'
-alias cd='() {cd "$@" && ls}'
-alias cp='() {cp "$@" && ls "$(dirname "$(readlink -f "${@[-1]}")")"}'
-alias mv='() {mv "$@" && ls "$(dirname "$(readlink -f "${@[-1]}")")"}'
-alias rm='() {trash "$@" && ls "$(dirname "$(readlink -f "${@[-1]}")")"}'
+alias cd='() {cd "$@" && ls -A}'
+alias cp='() {cp "$@" && ls -A "$(dirname "$(readlink -f "${@[-1]}")")"}'
+alias mv='() {mv "$@" && ls -A "$(dirname "$(readlink -f "${@[-1]}")")"}'
+alias rm='() {trash "$@" && ls -A "$(dirname "$(readlink -f "${@[-1]}")")"}'
 alias vim=nvim
 alias v=nvim
 alias vi=nvim
