@@ -10,9 +10,9 @@
 # class                 border  backgr.     text      indicator child_border
 client.focused          #282828d9 #282828d9 #d79921   #d79921   #d79921 
 client.focused_inactive #282828d9 #282828d9 #ebdbb2   #282828   #282828
-client.unfocused        #282828aa #282828aa #5f676abb #282828   #282828
-client.urgent           #282828aa #282828aa #cc241d   #282828   #cc241d
-client.placeholder      #282828aa #282828aa #ebdbb2   #282828   #282828 
+client.unfocused        #28282877 #28282877 #5f676a   #282828   #282828
+client.urgent           #28282877 #28282877 #cc241d   #282828   #cc241d
+client.placeholder      #28282877 #28282877 #ebdbb2   #282828   #282828 
 
 set $mod Mod1
 

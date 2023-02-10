@@ -22,6 +22,7 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'wellle/context.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+Plug 'anufrievroman/vim-tex-kawaii'
 call plug#end()
 
 
@@ -100,6 +101,8 @@ augroup end
 
 
 " MAPPINGS
+" open and close folds
+nmap <tab> za
 
 "coc autocomplete 
 inoremap <silent><expr> <c-space> coc#refresh()
