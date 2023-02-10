@@ -1,5 +1,6 @@
 local g = vim.g
 local o = vim.o
+local cmd = vim.cmd
 
 --VISUAL
 o.number = true
@@ -30,9 +31,10 @@ o.guifont = "DejaVuSansMono Nerd Font Mono 12"
 o.updatetime = 400
 o.mouse = ""
 
-vim.cmd("colorscheme gruvbox")
-vim.cmd('highlight Normal ctermbg=none')
-vim.cmd("syntax on")
+cmd("colorscheme gruvbox")
+cmd('highlight Normal ctermbg=none')
+cmd('highlight Folded ctermbg=none')
+cmd("syntax on")
 
 g.NERDTreeMapJumpNextSibling = ''
 g.NERDTreeMapJumpPrevSibling = ''
