@@ -1,16 +1,6 @@
 #!/bin/bash 
+# . "${HOME}/.cache/wal/colors.sh"
 
-
-[ "$#" -eq 1 ] \
-&& wallpaper="$(ls ~/Pictures/wallpapers/*/* | grep -i $1 | shuf -n 1)" 
-
-[ "$#" -eq 0 ] \
-&& wallpaper="$(ls ~/Pictures/wallpapers/*/* | shuf -n 1)"
-
-feh --bg-fill "$wallpaper"
-
-# change the color scheme
-wal -e -i "$wallpaper" &> /dev/null
 colors (){
 	fg="$(tail -1 ~/.cache/wal/colors)"
 	bg="$(head -1 ~/.cache/wal/colors)"
@@ -26,10 +16,24 @@ colors (){
 	echo "fg_polybar_a1: #77p${fg}"
 }
 
+[ "$#" -eq 1 ] \
+&& wallpaper="$(ls ~/Pictures/wallpapers/*/* | grep -i $1 | shuf -n 1)" 
+
+[ "$#" -eq 0 ] \
+&& wallpaper="$(ls ~/Pictures/wallpapers/*/* | shuf -n 1)"
+
+feh --bg-fill "$wallpaper"
+
+# change the color scheme
+wal -e -i "$wallpaper" &> /dev/null
 xrdb -merge ~/.cache/wal/colors.Xresources
 xrdb -merge <(sed -e "s/p#//" <(colors))
 
-# reload i3
-i3-msg restart &> /dev/null
+# reload things
+i3-msg reload &> /dev/null
+~/.config/polybar/launch-polybar.sh &>/dev/null & disown 
+pywalfox update &>/dev/null
+zathura-pywal -a 0.9 &>/dev/null
+# reload_dunst
 
 echo "$wallpaper"

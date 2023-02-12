@@ -65,9 +65,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- lock
 
 exec --no-startup-id picom -b
 exec --no-startup-id dunst &
-exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh &
-exec --no-startup-id killall nm-applet
 exec --no-startup-id lock $(change-wallpaper)
+# exec_always --no-startup-id ~/.config/polybar/launch-polybar.sh &
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
