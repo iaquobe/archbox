@@ -1,3 +1,5 @@
+local highlight = require("init.highlight")
+
 local g = vim.g
 local o = vim.o
 local cmd = vim.cmd
@@ -31,9 +33,8 @@ o.guifont = "DejaVuSansMono Nerd Font Mono 12"
 o.updatetime = 400
 o.mouse = ""
 
-cmd("colorscheme gruvbox")
-cmd('highlight Normal ctermbg=none')
-cmd('highlight Folded ctermbg=none')
+cmd("colorscheme wal")
+highlight.highlight()
 cmd("syntax on")
 
 g.NERDTreeMapJumpNextSibling = ''

@@ -1,28 +1,4 @@
---AUTOCMDS
---[[
-vim.cmd([[
-function! s:goyo_enter()
-	set relativenumber number
-	set scrolloff=999
-	hi Normal ctermbg=none
-	hi Folded ctermbg=none
-	Limelight
-endfunction
-
-function! s:goyo_leave()
-	set scrolloff=0
-	hi Normal ctermbg=none
-	hi Folded ctermbg=none
-	Limelight!
-endfunction
-
-augroup autocommands
-	autocmd!
-
-	"limelight for goyo
-	autocmd! User GoyoEnter nested call <SID>goyo_enter()
-	autocmd! User GoyoLeave nested call <SID>goyo_leave()
-augroup end]]
+local highlight = require("init.highlight")
 
 local o = vim.o
 local api = vim.api
@@ -52,11 +28,8 @@ api.nvim_create_autocmd('User', {
 		o.relativenumber = true
 		o.number = true
 		o.scrolloff = 999
-		cmd([[
-		hi Normal ctermbg=none
-		hi Folded ctermbg=none
-		Limelight
-		]])
+		highlight.highlight()
+		cmd("Limelight")
 	end
 })
 
@@ -68,10 +41,7 @@ api.nvim_create_autocmd('User', {
 		o.relativenumber = true
 		o.number = true
 		o.scrolloff = 0
-		cmd([[
-		hi Normal ctermbg=none
-		hi Folded ctermbg=none
-		Limelight!
-		]])
+		highlight.highlight()
+		cmd("Limelight!")
 	end
 })

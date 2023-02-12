@@ -8,11 +8,26 @@
 # i3 config file (v4)
 #
 # class                 border  backgr.     text      indicator child_border
-client.focused          #282828d9 #282828d9 #d79921   #d79921   #d79921 
-client.focused_inactive #282828d9 #282828d9 #ebdbb2   #282828   #282828
-client.unfocused        #28282877 #28282877 #5f676a   #282828   #282828
-client.urgent           #28282877 #28282877 #cc241d   #282828   #cc241d
-client.placeholder      #28282877 #28282877 #ebdbb2   #282828   #282828 
+# client.focused          #282828d9 #282828d9 #d79921   #d79921   #d79921 
+# client.focused_inactive #282828d9 #282828d9 #ebdbb2   #282828   #282828
+# client.unfocused        #28282877 #28282877 #5f676a   #282828   #282828
+# client.urgent           #28282877 #28282877 #cc241d   #282828   #cc241d
+# client.placeholder      #28282877 #28282877 #ebdbb2   #282828   #282828 
+
+set_from_resource $bg_alpha1 bg_i3_a1 #f0f0f0
+set_from_resource $bg_alpha0 bg_i3_a0 #f0f0f0
+set_from_resource $bg        color0        #f0f0f0
+set_from_resource $fg        color1        #f0f0f0
+set_from_resource $fg_alt    color15       #f0f0f0
+set_from_resource $fg_urgent color13       #f0f0f0
+set_from_resource $fg_place  color3        #f0f0f0
+
+# class                 border     backgr.       text       indicator child_border
+client.focused          $bg_alpha0 $bg_alpha0    $fg        $fg       $fg
+client.focused_inactive $bg_alpha0 $bg_alpha0    $fg_alt    $bg       $bg
+client.unfocused        $bg_alpha1 $bg_alpha1    $fg_alt    $bg       $bg
+client.urgent           $bg_alpha1 $bg_alpha1    $fg_urgent $bg       $fg_urgent
+client.placeholder      $bg_alpha1 $bg_alpha1    $fg_place  $bg       $bg
 
 set $mod Mod1
 

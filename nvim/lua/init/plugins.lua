@@ -18,5 +18,6 @@ Plug 'wellle/context.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'anufrievroman/vim-tex-kawaii'
+Plug 'dylanaraps/wal.vim'
 call plug#end()
 ]])

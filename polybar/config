@@ -17,33 +17,37 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #cc282828
-background-alt = #928374
-;foreground = ${xrdb:color7:#222}
-foreground = #ebdbb2
-foreground-alt = #d79921
-# foreground-alt = #a89984
-primary = #d79921
-secondary = #e60053
-alert = #bd2c40
+background = ${xrdb:bg_polybar_a0}
+background-alt = ${xrdb:color1}
+foreground = ${xrdb:color15}
+foreground-alt = ${xrdb:color1}
 
+; underlines
+green   = ${xrdb:color1}
+blue    = ${xrdb:color3}
+red     = ${xrdb:color5}
+yellow  = ${xrdb:color7}
+magenta = ${xrdb:color8}
+cyan    = ${xrdb:color9}
 
-green = #98971a
-blue = #459599
-red = #cc241d
-yellow = #d79921
-magenta = #b16286
-cyan = #689d6a
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+
+primary   = ${colors.color1}
+secondary = ${colors.color2}
+alert     = ${colors.red}
+urgent    = ${colors.color1}
+
 
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-;width = 99.48%
 height = 20
 offset-x = 0
-;offset-x = 0.26% 
-;offset-y = 5 
 radius = 0.0
 fixed-center = false
 
@@ -68,41 +72,21 @@ modules-right = filesystem memory cpu temperature bluetooth wlan eth volume brig
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
-
-;wm-restack = bspwm
 wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
 
 
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#d79921} %{F-}%percentage_used%%
-label-mounted-underline = ${colors.green}
-label-unmounted = %mountpoint% not mounted
-
 
 [module/desktop]
 type = custom/text
-; content = 
 content-foreground = ${colors.foreground-alt}
 content-background = ${colors.background}
 
@@ -110,7 +94,6 @@ content-background = ${colors.background}
 type = internal/i3
 pin-workspaces = true
 index-sort = true
-;       
 ws-icon-0 = 1; 
 ws-icon-1 = 2; 
 ws-icon-2 = 3; 
@@ -124,73 +107,88 @@ format = <label-state> <label-mode>
 label-mode = %index% %mode%
 label-mode-background = ${colors.background}
 label-mode-padding = 1
-# 
+
 label-focused = %index% %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-foreground = ${colors.foreground}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 1
-# 
+
 label-unfocused = %index% %icon%
 label-unfocused-background = ${colors.background}
 label-unfocused-padding = 1
 
 label-urgent = %index% %icon%
-label-urgent-foreground = ${colors.red}
-label-urgent-underline= ${colors.red}
+label-urgent-foreground = ${colors.urgent}
+label-urgent-underline= ${colors.urgent}
 label-urgent-padding = 1
 
 label-visible = %index% %icon%
 label-visible-underline = ${colors.primary}
 label-visible-padding = 1
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix =  
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.yellow}
-label = %percentage:2%%
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+format-prefix =  
+format-prefix-foreground = ${colors.color1}
+label-mounted = " %percentage_used%%"
+label-mounted-underline = ${colors.color1}
+label-unmounted = %mountpoint% not mounted
 
-;           
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.green}
+format-underline = ${colors.color1}
 label = %percentage_used%%
 
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix =  
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.color2}
+label = %percentage:2%%
 
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 80
+format = <ramp><label>
+format-underline = ${colors.color2}
+format-warn = <ramp><label-warn>
+format-warn-underline = ${self.format-underline}
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+ramp-0 =
+ramp-1 =
+ramp-2 =
+ramp-foreground = ${colors.foreground-alt} 
 
 [module/wlan]
 type = internal/network
 interface = wlp0s20f3
 interval = 3.0
-
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.blue}
+format-connected-underline = ${colors.color3}
 label-connected = %essid%
-
 format-disconnected =
-
-;           
-;          
 ramp-signal-0 =   
 ramp-signal-1 =   
-   
 ramp-signal-2 =   
 ramp-signal-3 = 
 ramp-signal-foreground = ${colors.foreground-alt}
-
 
 
 [module/eth]
 type = internal/network
 interface = enp3s0
 interval = 3.0
-
-format-connected-underline = ${colors.blue}
+format-connected-underline = ${colors.color3}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -211,7 +209,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.magenta}
+format-underline = ${colors.color5}
 
 label = %date% %time%
 
@@ -228,7 +226,7 @@ time-format = %H:%M
 format-charging-prefix =  
 format-charging-prefix-foreground = ${colors.foreground-alt}
 format-charging = <label-charging> 
-format-charging-underline = ${colors.red}
+format-charging-underline = ${colors.color4}
 label-charging = %percentage%%(%time%)
 
 format-discharging-prefix =  
@@ -243,34 +241,7 @@ format-full = <label-full>
 format-full-underline = ${self.format-charging-underline}
 label-full = %percentage%
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-0-foreground = ${colors.red}
-ramp-capacity-1-foreground = ${colors.red}
 
-
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 80
-format = <ramp><label>
-format-underline = ${colors.yellow}
-format-warn = <ramp><label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-;
-;          
-ramp-0 =
-ramp-1 =
-ramp-2 =
-ramp-foreground = ${colors.foreground-alt} 
 
 
 [module/volume]
@@ -279,7 +250,7 @@ label = %output%
 interval = 3.0
 
 format-prefix = 
-format-underline = ${colors.red}
+format-underline = ${colors.color3}
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/get-volume.sh
 
@@ -291,7 +262,7 @@ interval = 3.0
 
 ;          
 format-prefix = 
-format-underline = ${colors.red}
+format-underline = ${colors.color3}
 format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/backlight.sh
 

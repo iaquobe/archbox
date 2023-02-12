@@ -2,6 +2,10 @@
 # prompt
 PS1='%B[%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue} %2~%f]%# %b'
 [[ -n "$SSH_CLIENT" ]] && PS1="%F{blue}SSH:%f$PS1"
+
+(cat ~/.cache/wal/sequences &)
+
+
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export PAGER="less"
