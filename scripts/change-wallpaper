@@ -42,7 +42,7 @@ xrdb -merge <(sed -e "s/p#//" <(colors))
 # reload things
 i3-msg reload &> /dev/null
 ~/.config/polybar/launch-polybar.sh &>/dev/null & disown 
-pywalfox update &>/dev/null
+# pywalfox update &>/dev/null
 zathura-pywal -a 0.9 &>/dev/null
 reload_dunst &>/dev/null
 

@@ -1,32 +1,5 @@
 # Visual Programs
 
-## bspwm
-launches: 
-1. `dunst`: notification deamon
-2. `sxhkd`: keyboard shortcut deamon
-3. `polybar`: top bar
-4. `feh`: background setter
-
-sets:
-1. `xkeyboardmap` to german and swaps `escape` and `caps lock`
-2. `EDITOR` to `nvim`
-
-## sxhkd
-- `super + u`           : frefox
-- `alt + @space`        : scratchpad
-- `super + shift + q`   : suspend
-- `super + n`           : sites
-- `super + @space`      : dmenu run
-- `alt + {Down, Up}`    : volume control
-- `alt + {Left, Right}` : backlight control
-- `ctrl + super + x`    : take screenshot
-
-## Compton
-- excludes fade from scratchpad
-- no shadows for dmenu
-
-
-
 # Terminal behavior
 
 ## zsh 

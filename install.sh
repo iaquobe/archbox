@@ -10,6 +10,8 @@ PACKAGES_DE="bspwm sxhkd dunst polybar rofi sxiv thunderbird"
 PACKAGES_GUI="alacritty zathura zathura-zsh-completion zathura-pdf-mupdf feh sxiv  thunderbird"
 PACKAGES="$PACKAGES_UTIL $PACKAGES_GUI $PACKAGES_DE $PACKAGES_CLI $PACKAGES_MANAGER"
 
+PACKAGES_PIP="pywal"
+
 
 
 # install common packages
@@ -24,6 +26,23 @@ sudo dnf -y -q swap --allowerasing pipewire-pulseaudio pulseaudio
 echo -e "install:	$PACKAGES"
 sudo dnf -y -q install $PACKAGES
 sudo dnf -y -q upgrade 
+
+echo -e "install: $PACKAGES_PIP"
+
+echo -e "install: zathura pywal"
+mkdir git
+cd git
+git clone https://github.com/matthewlscarlson/zathura-pywal
+cd zathura-pywal 
+sudo make install
+cd ..
+
+echo -e "install: i3lock color"
+git clone https://github.com/Raymo111/i3lock-color
+cd i3lock-color
+sudo dnf install -y autoconf automake cairo-devel fontconfig gcc libev-devel libjpeg-turbo-devel libXinerama libxkbcommon-devel libxkbcommon-x11-devel libXrandr pam-devel pkgconf xcb-util-image-devel xcb-util-xrm-devel
+./install-i3lock-color.sh
+cd
 
 
 
@@ -100,7 +119,7 @@ git clone "https://github.com/zsh-users/zsh-syntax-highlighting" $SCRIPTPATH/zsh
 
 
 
-# install von plugins
+# install vim plugins
 echo 
 echo INSTALLING VIM PLUGGINS
 echo "install:	vimplug"

@@ -1,6 +1,7 @@
 *.pdf
 zsh/zsh-syntax-highlighting
 nvim/after
+nvim/spell
 nvim/plugged
 nvim/.VimballRecord
 zathura/zathurarc.bak
