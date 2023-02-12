@@ -3,5 +3,8 @@ zsh/zsh-syntax-highlighting
 nvim/after
 nvim/plugged
 nvim/.VimballRecord
+zathura/zathurarc.bak
+zathura/zathurarc
+dunst/dunstrc
 
 
