@@ -2,7 +2,7 @@
 # . "${HOME}/.cache/wal/colors.sh"
 
 reload_dunst (){
-	export bg_i3_a1="$(xrdb -get bg_i3_a1)"
+	export bg_i3_a1="$(xrdb -get bg_i3_a0)"
 	export foreground="$(xrdb -get foreground)"
 	export color1="$(xrdb -get color1)"
 	pkill dunst
