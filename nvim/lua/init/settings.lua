@@ -14,8 +14,9 @@ o.hlsearch = false
 o.showmode = true
 o.ignorecase = true
 
-o.list = true
-o.listchars = "tab:>-"
+-- o.list = true
+-- o.listchars = "tab:>-"
+o.fillchars= "foldopen:┬,foldclose:┴"
 
 
 o.shiftwidth = 3

@@ -6,6 +6,8 @@ local highlight = function()
 	cmd('highlight clear CursorLine')
 	cmd('highlight CursorLine cterm=underline')
 	cmd('highlight VertSplit ctermbg=none')
+	cmd('highlight TabLineFill cterm=none')
+	cmd('highlight TabLine cterm=none')
 end
 
 return { highlight = highlight }
