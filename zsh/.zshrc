@@ -1,6 +1,6 @@
 ### VISUALS
 # prompt
-PS1='%B[%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue} %2~%f]%# %b'
+PS1='%B||%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue}:%2~%f|> %b'
 [[ -n "$SSH_CLIENT" ]] && PS1="%F{blue}SSH:%f$PS1"
 
 (cat ~/.cache/wal/sequences &)
@@ -41,11 +41,12 @@ done
 # colored man page
 
 # short aliases
-alias ls='ls --color=auto'
+alias tree='lsd --tree --depth 5'
+alias ls='lsd --color=auto'
 alias cd='() {cd "$@" && ls -A}'
-alias cp='() {cp "$@" && ls -A "$(dirname "$(readlink -f "${@[-1]}")")"}'
-alias mv='() {mv "$@" && ls -A "$(dirname "$(readlink -f "${@[-1]}")")"}'
-alias rm='() {trash "$@" && ls -A "$(dirname "$(readlink -f "${@[-1]}")")"}'
+alias cp='() {cp "$@" && ls -A "$(dirname "${@[-1]}")"}'
+alias mv='() {mv "$@" && ls -A "$(dirname "${@[-1]}")"}'
+alias rm='() {trash "$@" && ls -A "$(dirname "${@[-1]}")"}'
 alias vim=nvim
 alias v=nvim
 alias vi=nvim
