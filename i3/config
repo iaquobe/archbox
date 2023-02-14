@@ -7,13 +7,6 @@
 
 # i3 config file (v4)
 #
-# class                 border  backgr.     text      indicator child_border
-# client.focused          #282828d9 #282828d9 #d79921   #d79921   #d79921 
-# client.focused_inactive #282828d9 #282828d9 #ebdbb2   #282828   #282828
-# client.unfocused        #28282877 #28282877 #5f676a   #282828   #282828
-# client.urgent           #28282877 #28282877 #cc241d   #282828   #cc241d
-# client.placeholder      #28282877 #28282877 #ebdbb2   #282828   #282828 
-
 set_from_resource $bg_alpha1 bg_i3_a1 #f0f0f0
 set_from_resource $bg_alpha0 bg_i3_a0 #f0f0f0
 set_from_resource $bg        color0        #f0f0f0
@@ -98,7 +91,7 @@ bindsym $mod+o exec --no-startup-id lock
 bindsym $mod+Shift+o exec --no-startup-id systemctl suspend
 
 # scratchpad
-exec --no-startup-id alacritty --class scratchpad
+exec --no-startup-id kitty --class scratchpad
 for_window [instance="scratchpad"] floating enabled
 for_window [instance="scratchpad"] move position 0px 0px
 for_window [instance="scratchpad"] resize set width 1000px height 150px

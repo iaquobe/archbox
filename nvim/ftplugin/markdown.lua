@@ -7,7 +7,6 @@ local cmd = vim.cmd
 g.autocompile = 0
 o.spell = true
 o.tw = 80
-o.colorcolumn = "80"
 
 -- AUTOCOMMANDS
 local augroup = api.nvim_create_augroup("markdown_autocommands", {})

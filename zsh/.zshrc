@@ -41,7 +41,7 @@ done
 # colored man page
 
 # short aliases
-alias tree='lsd --tree --depth 5'
+alias tree='() {lsd --tree --depth 5 "$@"}'
 alias ls='lsd --color=auto'
 alias cd='() {cd "$@" && ls -A}'
 alias cp='() {cp "$@" && ls -A "$(dirname "${@[-1]}")"}'
