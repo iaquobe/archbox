@@ -1,23 +1,26 @@
-vim.cmd([[
-call plug#begin()
-Plug 'preservim/nerdtree'
-Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/calendar.vim'
-Plug 'terryma/vim-smooth-scroll'
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install()}}
-Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'ryanoasis/vim-devicons'
-Plug 'wesQ3/vim-windowswap'
-Plug 'wellle/context.vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'anufrievroman/vim-tex-kawaii'
-Plug 'dylanaraps/wal.vim'
-call plug#end()
-]])
+require('packer').startup(function(use)
+	use 'wbthomason/packer.nvim'
+
+	use 'preservim/nerdtree'
+	use 'junegunn/limelight.vim'
+	use 'junegunn/goyo.vim'
+	use 'junegunn/fzf.vim'
+	use 'ryanoasis/vim-devicons'
+	use 'wesQ3/vim-windowswap'
+	use 'wellle/context.vim'
+
+	-- completion
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
+	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/nvim-cmp'
+
+	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	use 'nvim-treesitter/playground'
+
+	use 'anufrievroman/vim-tex-kawaii'
+	use 'dylanaraps/wal.vim'
+end)
+
+require('init.plugins-config')

@@ -6,7 +6,7 @@ local keymap = vim.keymap
 keymap.set('n', '<tab>', 'za')
 
 -- coc autocomplete
-vim.cmd('inoremap <silent><expr> <c-space> coc#refresh()')
+-- vim.cmd('inoremap <silent><expr> <c-space> coc#refresh()')
 
 -- exit term mode
 keymap.set('t', '<C-o>', '<C-\\><C-N>')
@@ -65,5 +65,4 @@ vim.g.windowswap_map_keys = 0
 vim.cmd("nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>")
 
 -- FZF keybinds
-keymap.set("n", "<leader>e", ":FZF<CR>", {remap=true})
-keymap.set("n", "<leader>v", ":vsplit<CR>:FZF<CR>", {remap=true})
+keymap.set("n", "<leader>f", ":FZF<CR>", {remap=true})
