@@ -30,12 +30,11 @@ api.nvim_create_autocmd("BufWritePost", {
 	group = augroup,
 	pattern = {"*"},
 	command = "silent execute '!(latexmk -bibtex -pdf -interaction=nonstopmode; latexmk -c) &>compile.log &'"
-	})
+})
 
 
 -- OPTIONS
 opt_local.spell = true
-opt_local.colorcolumn = "80"
 
 -- KEYMAP
 -- begin environment with <leader>b

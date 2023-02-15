@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# TEXT='#d79921ee'
+# WRONG='#cc241dbb'
+# VERIFYING='#98971abb'
+# DEFAULT='#d79921cc'
 
 if [ $# = 1 ]
 then 
@@ -9,10 +13,10 @@ fi
 
 BLANK='#28282833' #'#00000000'
 CLEAR='#282828cc'
-DEFAULT='#d79921cc'
-TEXT='#d79921ee'
-WRONG='#cc241dbb'
-VERIFYING='#98971abb'
+DEFAULT="$(xrdb -get color1)ee"
+TEXT="$(xrdb -get color1)ee"
+WRONG="$(xrdb -get color2)bb"
+VERIFYING="$(xrdb -get color3)bb"
 
 i3lock \
 --insidever-color=$CLEAR     \
