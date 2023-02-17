@@ -23,13 +23,13 @@ endfunction
 ]])
 
 -- AUTOCOMMANDS
-local augroup = api.nvim_create_augroup("latex_autocommands", {})
+local augroup = api.nvim_create_augroup("ftp_latex_autocommands", {})
 
 -- autocompile when file changes
 api.nvim_create_autocmd("BufWritePost", {
 	group = augroup,
 	pattern = {"*"},
-	command = "silent execute '!(latexmk -bibtex -pdf -interaction=nonstopmode; latexmk -c) &>compile.log &'"
+	command = "TexlabBuild"
 })
 
 

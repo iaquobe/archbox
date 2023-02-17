@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/limelight.vim",
     url = "https://github.com/junegunn/limelight.vim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -143,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
-  },
-  ["vim-tex-kawaii"] = {
-    loaded = true,
-    path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/vim-tex-kawaii",
-    url = "https://github.com/anufrievroman/vim-tex-kawaii"
   },
   ["vim-windowswap"] = {
     loaded = true,

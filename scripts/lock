@@ -15,8 +15,8 @@ BLANK='#28282833' #'#00000000'
 CLEAR='#282828cc'
 DEFAULT="$(xrdb -get color1)ee"
 TEXT="$(xrdb -get color1)ee"
-WRONG="$(xrdb -get color2)bb"
-VERIFYING="$(xrdb -get color3)bb"
+WRONG="$(xrdb -get color3)bb"
+VERIFYING="$(xrdb -get color2)ff"
 
 i3lock \
 --insidever-color=$CLEAR     \

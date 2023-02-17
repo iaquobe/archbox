@@ -24,7 +24,8 @@ o.tabstop = 3
 o.encoding = "UTF-8"
 o.spelllang = "en_us,de_de"
 
-o.foldmethod = "indent"
+o.foldmethod = "expr"
+o.foldexpr = "nvim_treesitter#foldexpr()"
 o.foldnestmax = 1
 o.foldcolumn = '1'
 o.foldlevel = 99

@@ -16,10 +16,11 @@ require('packer').startup(function(use)
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/nvim-cmp'
 
+	use 'nvim-lualine/lualine.nvim'
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	use 'nvim-treesitter/playground'
 
-	use 'anufrievroman/vim-tex-kawaii'
+	-- use 'anufrievroman/vim-tex-kawaii'
 	use 'dylanaraps/wal.vim'
 end)
 

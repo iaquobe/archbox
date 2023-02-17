@@ -10,7 +10,10 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
-	}, {
+	},{
 		{ name = 'buffer' },
 	})
 })
+
+vim.keymap.set("n","<C-p>",vim.diagnostic.goto_prev,{silent = true})
+vim.keymap.set("n","<C-n>",vim.diagnostic.goto_next,{silent = true})

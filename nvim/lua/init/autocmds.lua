@@ -30,6 +30,7 @@ api.nvim_create_autocmd('User', {
 		o.scrolloff = 999
 		highlight.highlight()
 		cmd("Limelight")
+		require('lualine').hide()
 	end
 })
 
@@ -43,5 +44,6 @@ api.nvim_create_autocmd('User', {
 		o.scrolloff = 0
 		highlight.highlight()
 		cmd("Limelight!")
+		require('lualine').hide({unhide=true})
 	end
 })
