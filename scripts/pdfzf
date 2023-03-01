@@ -1,0 +1,12 @@
+#!/bin/bash
+
+preview_function() {
+	echo "$@"
+}
+export -f preview_function
+
+RG_PREFIX="pdfgrep --recursive -i -n"
+INITIAL_QUERY=""
+FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \
+	fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+	--ansi --disabled --query "$INITIAL_QUERY" --preview "preview_function {}"

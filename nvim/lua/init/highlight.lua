@@ -8,6 +8,7 @@ local highlight = function()
 	cmd('highlight VertSplit ctermbg=none')
 	cmd('highlight TabLineFill cterm=none')
 	cmd('highlight TabLine cterm=none')
+	cmd('highlight Pmenu ctermbg=0')
 end
 
 return { highlight = highlight }

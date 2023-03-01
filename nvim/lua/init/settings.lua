@@ -16,7 +16,7 @@ o.ignorecase = true
 
 -- o.list = true
 -- o.listchars = "tab:>-"
-o.fillchars= "foldopen:┬,foldclose:┴"
+o.fillchars= "foldopen:┬,foldclose:{"
 
 
 o.shiftwidth = 3

@@ -2,6 +2,8 @@
 --open and close folds
 
 local keymap = vim.keymap
+local cmd = vim.cmd
+local g = vim.g
 
 keymap.set('n', '<tab>', 'za')
 
@@ -33,7 +35,7 @@ keymap.set('n', '<Leader>c', 'mm0]s1z=`m')
 keymap.set('i', '<C-u>', '<C-w>', {remap=true})
 
 -- add lines with [number]<space>+<j/k>
-vim.cmd([[function! InsertLines(direction)
+cmd([[function! InsertLines(direction)
 	if a:direction == 1
 		execute "normal ". v:count1. "o" 
 		execute "normal ". v:count1. "k" 
@@ -61,8 +63,10 @@ keymap.set('n','<leader>p','gT',{remap=true})
 -- goyo open
 keymap.set('n', '<leader>y', ':Goyo<CR>')
 
-vim.g.windowswap_map_keys = 0 
-vim.cmd("nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>")
+g.windowswap_map_keys = 0
+cmd("nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>")
 
 -- FZF keybinds
-keymap.set("n", "<leader>f", ":FZF<CR>", {remap=true})
+cmd("command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)")
+keymap.set("n", "<leader>f", ":Files<CR>", {remap=true})
+keymap.set("n", "<leader>r", ":Rg<CR>", {remap=true})

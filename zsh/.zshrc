@@ -44,6 +44,8 @@ done
 alias tree='() {lsd --tree --depth 5 "$@"}'
 alias ls='lsd --color=auto'
 alias cd='() {cd "$@" && ls -A}'
+
+alias cf='() {cd "$(\tree -dfi --noreport | fzf)"}'
 alias cp='() {cp "$@" && ls -A "$(dirname "${@[-1]}")"}'
 alias mv='() {mv "$@" && ls -A "$(dirname "${@[-1]}")"}'
 alias rm='() {trash "$@" && ls -A "$(dirname "${@[-1]}")"}'

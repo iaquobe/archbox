@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -148,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-tex-kawaii"] = {
+    loaded = true,
+    path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/vim-tex-kawaii",
+    url = "https://github.com/anufrievroman/vim-tex-kawaii"
   },
   ["vim-windowswap"] = {
     loaded = true,

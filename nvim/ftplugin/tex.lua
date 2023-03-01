@@ -22,6 +22,19 @@ function! EnvList(ArgLead, CmdLine, CursorPos)
 endfunction
 ]])
 
+cmd([[
+function! SectionList(ArgLead, CmdLine, CursorPos)
+	let list = [
+				\"section",
+				\"subsection",
+				\"subsubsection",
+				\]
+	let completion = filter(list, 'v:val =~ "^' . a:ArgLead . '"')
+	echo completion
+	return completion
+endfunction
+]])
+
 -- AUTOCOMMANDS
 local augroup = api.nvim_create_augroup("ftp_latex_autocommands", {})
 
@@ -34,7 +47,7 @@ api.nvim_create_autocmd("BufWritePost", {
 
 
 -- OPTIONS
-opt_local.spell = true
+-- opt_local.spell = true
 
 -- KEYMAP
 -- begin environment with <leader>b
@@ -49,4 +62,21 @@ keymap.set('n', '<leader>b', function()
 	end)
 end)
 
-cmd("normal zM")
+keymap.set('n', '<leader>s', function()
+	ui.input({ prompt = "section type: ", completion = "customlist,SectionList"},
+	function(input)
+		if(input == nil) then
+			input = "section"
+		end
+		ui.input({ prompt = "title: " }, function(title)
+			if(title ~= nil) then
+				local linenr = fn.line(".")
+				api.nvim_buf_set_lines(0, linenr, linenr, true, {"\\" .. input .. "{" .. title .. "}"})
+				cmd("normal j")
+			end
+		end)
+	end)
+end)
+
+
+--cmd("normal zM")
