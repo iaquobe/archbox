@@ -1,0 +1,4 @@
+#!/bin/bash 
+
+feh --bg-fill /tmp/wallpaper
+~/.config/polybar/launch-polybar.sh || notify-send "failed to restart polybar"
