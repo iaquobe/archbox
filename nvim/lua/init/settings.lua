@@ -48,8 +48,11 @@ g.goyo_linenr = 'relativenumber'
 g.goyo_height = "90%"
 g.goyo_width = 90
 g.gutentags_cache_dir = '~/.local/share/gutentags'
+
 g.context_enabled = 1
 g.context_nvim_no_redraw = 1
 g.context_presenter = 'nvim-float'
+g.context_filetype_blacklist = {"json"}
+
 g.mapleader = " "
 

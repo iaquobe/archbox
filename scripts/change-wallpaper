@@ -7,7 +7,7 @@ reload_dunst (){
 	export color1="$(xrdb -get color1)"
 	pkill dunst
 
-	envsubst <~/.config/dunst/dunstrc.tmpl > ~/.config/dunst/dunstrc
+	envsubst < ~/.config/dunst/dunstrc.tmpl > ~/.config/dunst/dunstrc
 	dunst & disown
 }
 
@@ -32,6 +32,7 @@ colors (){
 [ "$#" -eq 0 ] \
 && wallpaper="$(ls ~/Pictures/wallpapers/*/* | shuf -n 1)"
 
+ln -sf "$wallpaper" /tmp/wallpaper
 feh --bg-fill "$wallpaper"
 
 # change the color scheme
@@ -39,10 +40,11 @@ wal -e -i "$wallpaper" &> /dev/null
 xrdb -merge ~/.cache/wal/colors.Xresources
 xrdb -merge <(sed -e "s/p#//" <(colors))
 
+# is reloaded in i3 config
+
 # reload things
 i3-msg reload &> /dev/null
 ~/.config/polybar/launch-polybar.sh &>/dev/null & disown 
-# pywalfox update &>/dev/null
 zathura-pywal -a 0.9 &>/dev/null
 reload_dunst &>/dev/null
 

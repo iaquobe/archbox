@@ -8,18 +8,28 @@ require("mason-lspconfig").setup({
 	"pyright",
 	"texlab",
 	"rust_analyzer",
-	"marksman"}
+	"vtsls",
+	"marksman"},
+	automatic_installation = true,
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local on_attach = function(client, bufnr)
+	local bufopts = { noremap=true, silent=true, buffer=bufnr }
+	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+	vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+ end
 
-require('lspconfig').clangd.setup {capabilities = capabilities}
-require('lspconfig').cmake.setup {capabilities = capabilities}
-require('lspconfig').pyright.setup {capabilities = capabilities}
-require('lspconfig').lua_ls.setup {capabilities = capabilities}
-require('lspconfig').bashls.setup {capabilities = capabilities}
+require('lspconfig').clangd.setup {capabilities = capabilities, on_attach = on_attach}
+require('lspconfig').cmake.setup {capabilities = capabilities, on_attach = on_attach}
+require('lspconfig').pyright.setup {capabilities = capabilities, on_attach = on_attach}
+require('lspconfig').lua_ls.setup {capabilities = capabilities, on_attach = on_attach}
+require('lspconfig').bashls.setup {capabilities = capabilities, on_attach = on_attach}
+require('lspconfig').vtsls.setup {capabilities = capabilities, on_attach = on_attach}
 require('lspconfig').rust_analyzer.setup {
 	capabilities = capabilities,
+	on_attach = on_attach,
 	cmd = {
 		"rustup", "run", "stable", "rust-analyzer",
 	}
