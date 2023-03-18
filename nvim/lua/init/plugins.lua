@@ -21,8 +21,11 @@ require('packer').startup(function(use)
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	use 'nvim-treesitter/playground'
 
+	use 'ggandor/leap.nvim'
+
 	use 'anufrievroman/vim-tex-kawaii'
 	use 'dylanaraps/wal.vim'
+  	use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 end)
 
 require('init.plugins-config')

@@ -61,7 +61,7 @@ keymap.set('n','<leader>n','gt',{remap=true})
 keymap.set('n','<leader>p','gT',{remap=true})
 
 -- goyo open
-keymap.set('n', '<leader>y', ':Goyo<CR>')
+keymap.set('n', '<leader>g', ':Goyo<CR>')
 
 g.windowswap_map_keys = 0
 cmd("nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>")

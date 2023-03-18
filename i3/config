@@ -59,6 +59,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+# bindsym $mod+b exec --no-startup-iq setxkbmap -option caps:escape
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -70,6 +71,8 @@ bindsym $mod+u exec --no-startup-id firefox
 bindsym $mod+n exec --no-startup-id dunstctl close
 bindsym $mod+o exec --no-startup-id lock
 bindsym $mod+Shift+o exec --no-startup-id systemctl suspend
+
+# for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws6
 
 # scratchpad
 exec --no-startup-id kitty --class scratchpad

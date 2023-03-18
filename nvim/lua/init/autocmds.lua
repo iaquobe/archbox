@@ -25,11 +25,12 @@ api.nvim_create_autocmd('User', {
 	group = augroup,
 	nested = true,
 	callback = function()
-		o.relativenumber = true
-		o.number = true
+		o.relativenumber = false
+		o.number = false
 		o.scrolloff = 999
 		highlight.highlight()
 		cmd("Limelight")
+		cmd("ToggleDiagOff")
 		require('lualine').hide()
 	end
 })
@@ -44,6 +45,7 @@ api.nvim_create_autocmd('User', {
 		o.scrolloff = 0
 		highlight.highlight()
 		cmd("Limelight!")
+		cmd("ToggleDiagOn")
 		require('lualine').hide({unhide=true})
 	end
 })

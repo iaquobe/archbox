@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/goyo.vim",
     url = "https://github.com/junegunn/goyo.vim"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["limelight.vim"] = {
     loaded = true,
     path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/limelight.vim",
@@ -148,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/playground",
     url = "https://github.com/nvim-treesitter/playground"
+  },
+  ["toggle-lsp-diagnostics.nvim"] = {
+    loaded = true,
+    path = "/home/iaquobe/.local/share/nvim/site/pack/packer/start/toggle-lsp-diagnostics.nvim",
+    url = "https://github.com/WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
   },
   ["vim-devicons"] = {
     loaded = true,
