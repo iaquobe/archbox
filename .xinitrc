@@ -1,5 +1,5 @@
 unclutter & 
-setxkbmap de -option caps:swapescape &
+setxkbmap us -option caps:swapescape &
 xbindkeys
 exec i3
 
