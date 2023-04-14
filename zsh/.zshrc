@@ -32,7 +32,7 @@ autoload -Uz compinit && compinit
 ### ALIASES
 # muted programs are detached from terminal and dont produce output 
 alias muted='() { "$@" &>/dev/null &; disown }'
-muted_prog=( zathura firefox vimiv spotify alacritty )
+muted_prog=( kitty zathura firefox vimiv spotify alacritty )
 for prog in $muted_prog
 do
 	alias $prog="muted $prog"
@@ -46,7 +46,7 @@ alias ls='lsd --color=auto'
 alias cd='() {cd "$@" && ls -A}'
 
 # alias cf='() {cd "$(\tree -dfi --noreport | fzf --preview "lsd --tree --depth 2  -- {}")"}'
-	alias cf='() {clear; cd "$(\tree -dfi --noreport | fzf )"}'
+alias cf='() {clear; cd "$(\tree -dfi --noreport | fzf )"}'
 alias cp='() {cp "$@" && ls -A "$(dirname "${@[-1]}")"}'
 alias mv='() {mv "$@" && ls -A "$(dirname "${@[-1]}")"}'
 alias rm='() {trash "$@" && ls -A "$(dirname "${@[-1]}")"}'

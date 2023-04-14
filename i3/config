@@ -76,7 +76,7 @@ bindsym $mod+Shift+o exec --no-startup-id systemctl suspend
 # for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws6
 
 # change keyboard layout with mod+shift+u/d
-bindsym $mod+Shift+u exec --no-startup-id setxkbmap us -option caps:swapescape
+bindsym $mod+Shift+u exec --no-startup-id setxkbmap us altgr-intl -option caps:swapescape
 bindsym $mod+Shift+d exec --no-startup-id setxkbmap de -option caps:swapescape
 
 # scratchpad
