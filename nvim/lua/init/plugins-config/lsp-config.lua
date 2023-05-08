@@ -37,3 +37,4 @@ require('lspconfig').rust_analyzer.setup {
 
 require('lspconfig').texlab.setup {capabilities = capabilities ,settings = { textlab = {build = { args = {"-pdf", "-interaction=nonstopmode"}}}}}
 require('lspconfig').dartls.setup {}
+require('lspconfig').r_language_server.setup {}

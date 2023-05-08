@@ -9,7 +9,9 @@ export VISUAL=/usr/bin/nvim
 PATH=$PATH":$HOME/bin"
 PATH=$PATH":$HOME/.local/bin"
 PATH=$PATH":$HOME/scripts"
-PATH=$PATH":$HOME/.cargo/bin/"
+PATH=$PATH":$HOME/.cargo/bin"
+PATH=$PATH":$HOME/.android/cmdline-tools/latest/bin"
+PATH=$PATH":$HOME/go/bin"
 # PATH=$PATH":."
 
 
