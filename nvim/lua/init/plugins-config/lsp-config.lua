@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
 	"pyright",
 	"texlab",
 	"rust_analyzer",
+	"jdtls",
 	"vtsls",
 	"marksman"},
 	automatic_installation = true,
@@ -38,3 +39,4 @@ require('lspconfig').rust_analyzer.setup {
 require('lspconfig').texlab.setup {capabilities = capabilities ,settings = { textlab = {build = { args = {"-pdf", "-interaction=nonstopmode"}}}}}
 require('lspconfig').dartls.setup {}
 require('lspconfig').r_language_server.setup {}
+require('lspconfig').jdtls.setup {}
