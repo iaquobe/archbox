@@ -21,6 +21,8 @@ require('packer').startup(function(use)
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	use 'nvim-treesitter/playground'
 
+   use 'christoomey/vim-tmux-navigator'
+
 	use 'ggandor/leap.nvim'
 
 	use 'anufrievroman/vim-tex-kawaii'

@@ -21,6 +21,7 @@ o.fillchars= "foldopen:┬,foldclose:{"
 
 o.shiftwidth = 3
 o.tabstop = 3
+o.expandtab = true
 o.encoding = "UTF-8"
 o.spelllang = "en_us,de_de"
 
