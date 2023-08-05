@@ -69,4 +69,5 @@ cmd("nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>")
 -- FZF keybinds
 cmd("command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)")
 keymap.set("n", "<leader>f", ":Files<CR>", {remap=true})
+keymap.set("n", "<leader>h", ":HFiles<CR>", {remap=true})
 keymap.set("n", "<leader>r", ":Rg<CR>", {remap=true})

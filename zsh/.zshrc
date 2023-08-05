@@ -1,6 +1,6 @@
 ### VISUALS
 # prompt
-PS1='%B||%F{red}%n%f%F{yellow}@%f%F{green}%m%f%F{blue}:%2~%f|> %b'
+PS1='%B| %F{blue}%2~%f |> %b'
 [[ -n "$SSH_CLIENT" ]] && PS1="%F{blue}SSH:%f$PS1"
 
 (cat ~/.cache/wal/sequences &)
@@ -32,7 +32,7 @@ autoload -Uz compinit && compinit
 ### ALIASES
 # muted programs are detached from terminal and dont produce output 
 alias muted='() { "$@" &>/dev/null &; disown }'
-muted_prog=( kitty zathura firefox vimiv spotify alacritty )
+muted_prog=( kitty zathura firefox vimiv spotify alacritty sxiv )
 for prog in $muted_prog
 do
 	alias $prog="muted $prog"
@@ -52,6 +52,7 @@ alias mv='() {mv "$@" && ls -A "$(dirname "${@[-1]}")"}'
 alias rm='() {trash "$@" && ls -A "$(dirname "${@[-1]}")"}'
 alias vim=nvim
 alias v=nvim
+alias z=zathura
 alias vi=nvim
 alias idv='nvim -S ~/.config/nvim/idv.vim'
 alias rss='newsbeuter -u ~/.config/newsbeuter/urls -C ~/.config/newsbeuter/config'
@@ -62,10 +63,7 @@ alias gl='git log --all --graph --decorate'
 alias skb='setxkbmap -option caps:escape'
 alias webcam='mpv --demuxer-lavf-format=video4linux2 --demuxer-lavf-o-set=input_format=mjpeg av://v4l2:/dev/video0'
 alias gitcompush='() {git add .; git commit $@; git push}'
-
-alias v0='() {/opt/cisco/anyconnect/bin/vpn -s connect vpn2.mpdl.mpg.de; ip link show cscotun0;}'
-alias v1='echo "password: "; read PASSWD; printf '\''1\nlamberthartmann\n$PASSWD\ny'\'' | /opt/cisco/anyconnect/bin/vpn -s connect vpn2.mpdl.mpg.de; ip link show cscotun0;'
-alias vD='/opt/cisco/anyconnect/bin/vpn disconnect; ip link show cscotun0;'
+alias sync='rsync --info=Progress2 -zre "ssh -p 8361" ~/courses cloud@iaquobe.de:'
 
 
 

@@ -1,6 +1,7 @@
 require("init.plugins-config.cmp")
 require("init.plugins-config.lsp-config")
 require("init.plugins-config.lualine")
+require("init.plugins-config.fzf")
 require("init.plugins-config.treesitter")
 require("init.plugins-config.leap")
 require("init.plugins-config.toggle-lsp")
